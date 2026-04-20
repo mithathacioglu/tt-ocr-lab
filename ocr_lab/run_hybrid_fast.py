@@ -235,7 +235,8 @@ decode_ms = (time.perf_counter()-t0)*1000
 total_ms = (time.perf_counter()-t_total)*1000
 
 gen_text = tokenizer.decode(generated, skip_special_tokens=True)
-kws = ['hükümler', 'davalı', 'olunmuş', 'Dilekçesi', 'kesinleştiği']
+kws = ['hükümler', 'davalı', 'olunmuş', 'Dilekçesi', 'kesinleştiği',
+       'BAKIRKÖY', 'KESİNLEŞME', 'Mahkememizden', 'İstinaftan', 'tasdik']
 found = [k for k in kws if k in gen_text]
 
 print(f"\n{'='*60}")
