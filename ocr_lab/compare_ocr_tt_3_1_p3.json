@@ -1,0 +1,53 @@
+{
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_3.1pdf_page-3.png",
+  "model_path": "rednote-hilab/dots.ocr",
+  "device_index": "0",
+  "prompt": "Please output the exact text in the image.\n\nReturn plain text only.\n",
+  "repeats": 2,
+  "fixed_page": {
+    "source_width": 1240,
+    "source_height": 1754,
+    "target_width": 468,
+    "target_height": 662,
+    "scaled_width": 468,
+    "scaled_height": 662,
+    "pad_left": 0,
+    "pad_top": 0,
+    "scale": 0.377419
+  },
+  "tt_device": "xla:0",
+  "tt_runtime": {
+    "cache_dir": null,
+    "compile_options": {
+      "optimization_level": "2"
+    },
+    "program_cache_enabled": true,
+    "trace_enabled": false,
+    "trace_region_size": null
+  },
+  "iterations": [
+    {
+      "index": 1,
+      "tt_vision_ms": 5909.393,
+      "cpu_decoder_ms": 12153.465,
+      "total_ms": 18065.692,
+      "output_text": "<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Sirketi olan, <br> vergi kimlik numaralar, <br> bedelli.</td><td>çek numaları, "
+    },
+    {
+      "index": 2,
+      "tt_vision_ms": 3876.569,
+      "cpu_decoder_ms": 11864.689,
+      "total_ms": 15743.845,
+      "output_text": "<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Sirketi olan, <br> vergi kimlik numaralar, <br> bedelli.</td><td>çek numaları, "
+    }
+  ],
+  "summary": {
+    "first_total_ms": 18065.692,
+    "first_tt_vision_ms": 5909.393,
+    "first_cpu_decoder_ms": 12153.465,
+    "hot_total_avg_ms": 15743.845,
+    "hot_tt_vision_avg_ms": 3876.569,
+    "hot_cpu_decoder_avg_ms": 11864.689
+  },
+  "output_text": "<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Sirketi olan, <br> vergi kimlik numaralar, <br> bedelli.</td><td>çek numaları, "
+}

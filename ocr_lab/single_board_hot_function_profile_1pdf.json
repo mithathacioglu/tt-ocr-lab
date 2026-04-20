@@ -1,0 +1,2400 @@
+{
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+  "warmup_runs": 1,
+  "fixed_page": {
+    "source_width": 1240,
+    "source_height": 1754,
+    "target_width": 672,
+    "target_height": 952,
+    "scaled_width": 672,
+    "scaled_height": 951,
+    "pad_left": 0,
+    "pad_top": 0,
+    "scale": 0.541935
+  },
+  "tt_device": "xla:0",
+  "tt_runtime": {
+    "cache_dir": null,
+    "compile_options": {
+      "optimization_level": "2"
+    },
+    "program_cache_enabled": true,
+    "trace_enabled": false,
+    "trace_region_size": null
+  },
+  "warmups": [
+    {
+      "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+      "device_index": "0",
+      "tt_device": "xla:0",
+      "fixed_page": {
+        "source_width": 1240,
+        "source_height": 1754,
+        "target_width": 672,
+        "target_height": 952,
+        "scaled_width": 672,
+        "scaled_height": 951,
+        "pad_left": 0,
+        "pad_top": 0,
+        "scale": 0.541935
+      },
+      "tt_runtime": {
+        "cache_dir": null,
+        "compile_options": {
+          "optimization_level": "2"
+        },
+        "program_cache_enabled": true,
+        "trace_enabled": false,
+        "trace_region_size": null
+      },
+      "tt_vision_ms": 23946.703,
+      "cpu_decoder_ms": 16692.835,
+      "total_ms": 40649.351,
+      "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli",
+      "index": 1
+    }
+  ],
+  "hot_run": {
+    "timings_ms": {
+      "build_inputs_ms": 51.496,
+      "h2d_ms": 0.907,
+      "tt_vision_ms": 13396.139,
+      "vision_d2h_ms": 0.516,
+      "inject_ms": 5.048,
+      "cpu_generate_ms": 13004.389,
+      "decode_ms": 0.414,
+      "total_ms": 26463.208
+    },
+    "generated_token_count": 64,
+    "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli",
+    "tt_vision_profile": {
+      "segmented_total_ms": 13389.72,
+      "segments": {
+        "vision.blocks.attn_cpu": {
+          "calls": 42,
+          "ms": 9362.245,
+          "avg_ms": 222.911
+        },
+        "vision.blocks.gated_cpu": {
+          "calls": 42,
+          "ms": 1899.064,
+          "avg_ms": 45.216
+        },
+        "vision.blocks.norm2_cpu": {
+          "calls": 42,
+          "ms": 489.775,
+          "avg_ms": 11.661
+        },
+        "vision.blocks.norm1_cpu": {
+          "calls": 42,
+          "ms": 463.547,
+          "avg_ms": 11.037
+        },
+        "vision.blocks.fc2_tt_residual": {
+          "calls": 42,
+          "ms": 449.295,
+          "avg_ms": 10.698
+        },
+        "vision.blocks.proj_tt_residual": {
+          "calls": 42,
+          "ms": 276.96,
+          "avg_ms": 6.594
+        },
+        "vision.blocks.qkv_tt": {
+          "calls": 42,
+          "ms": 134.366,
+          "avg_ms": 3.199
+        },
+        "vision.blocks.fc1_tt": {
+          "calls": 42,
+          "ms": 126.555,
+          "avg_ms": 3.013
+        },
+        "vision.merger_cpu": {
+          "calls": 1,
+          "ms": 90.709,
+          "avg_ms": 90.709
+        },
+        "vision.blocks.fc3_tt": {
+          "calls": 42,
+          "ms": 43.227,
+          "avg_ms": 1.029
+        },
+        "vision.patch_embed_tt": {
+          "calls": 1,
+          "ms": 24.33,
+          "avg_ms": 24.33
+        },
+        "vision.post_norm_cpu": {
+          "calls": 1,
+          "ms": 13.206,
+          "avg_ms": 13.206
+        },
+        "vision.rotary_cache_cpu": {
+          "calls": 1,
+          "ms": 7.266,
+          "avg_ms": 7.266
+        },
+        "vision.cu_seqlens_cpu": {
+          "calls": 1,
+          "ms": 0.523,
+          "avg_ms": 0.523
+        }
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "norm1_cpu_ms": 10.204,
+          "qkv_tt_ms": 2.352,
+          "attn_cpu_ms": 272.881,
+          "proj_tt_residual_ms": 55.633,
+          "norm2_cpu_ms": 20.386,
+          "fc1_tt_ms": 2.563,
+          "fc3_tt_ms": 0.58,
+          "gated_cpu_ms": 77.502,
+          "fc2_tt_residual_ms": 57.739,
+          "total_ms": 499.84
+        },
+        {
+          "index": 1,
+          "norm1_cpu_ms": 10.491,
+          "qkv_tt_ms": 2.84,
+          "attn_cpu_ms": 186.478,
+          "proj_tt_residual_ms": 4.454,
+          "norm2_cpu_ms": 10.1,
+          "fc1_tt_ms": 2.602,
+          "fc3_tt_ms": 0.717,
+          "gated_cpu_ms": 44.216,
+          "fc2_tt_residual_ms": 9.118,
+          "total_ms": 271.016
+        },
+        {
+          "index": 2,
+          "norm1_cpu_ms": 9.894,
+          "qkv_tt_ms": 2.869,
+          "attn_cpu_ms": 198.089,
+          "proj_tt_residual_ms": 4.786,
+          "norm2_cpu_ms": 9.163,
+          "fc1_tt_ms": 2.873,
+          "fc3_tt_ms": 0.751,
+          "gated_cpu_ms": 40.728,
+          "fc2_tt_residual_ms": 9.357,
+          "total_ms": 278.51
+        },
+        {
+          "index": 3,
+          "norm1_cpu_ms": 9.901,
+          "qkv_tt_ms": 2.911,
+          "attn_cpu_ms": 172.791,
+          "proj_tt_residual_ms": 4.514,
+          "norm2_cpu_ms": 10.668,
+          "fc1_tt_ms": 2.526,
+          "fc3_tt_ms": 0.742,
+          "gated_cpu_ms": 41.112,
+          "fc2_tt_residual_ms": 10.051,
+          "total_ms": 255.216
+        },
+        {
+          "index": 4,
+          "norm1_cpu_ms": 13.711,
+          "qkv_tt_ms": 3.259,
+          "attn_cpu_ms": 164.889,
+          "proj_tt_residual_ms": 4.557,
+          "norm2_cpu_ms": 11.159,
+          "fc1_tt_ms": 2.641,
+          "fc3_tt_ms": 0.739,
+          "gated_cpu_ms": 49.602,
+          "fc2_tt_residual_ms": 9.742,
+          "total_ms": 260.299
+        },
+        {
+          "index": 5,
+          "norm1_cpu_ms": 15.755,
+          "qkv_tt_ms": 2.929,
+          "attn_cpu_ms": 182.139,
+          "proj_tt_residual_ms": 4.213,
+          "norm2_cpu_ms": 11.673,
+          "fc1_tt_ms": 2.722,
+          "fc3_tt_ms": 0.862,
+          "gated_cpu_ms": 41.315,
+          "fc2_tt_residual_ms": 9.397,
+          "total_ms": 271.005
+        },
+        {
+          "index": 6,
+          "norm1_cpu_ms": 10.439,
+          "qkv_tt_ms": 2.782,
+          "attn_cpu_ms": 174.629,
+          "proj_tt_residual_ms": 4.319,
+          "norm2_cpu_ms": 8.875,
+          "fc1_tt_ms": 2.825,
+          "fc3_tt_ms": 0.85,
+          "gated_cpu_ms": 35.245,
+          "fc2_tt_residual_ms": 9.094,
+          "total_ms": 249.058
+        },
+        {
+          "index": 7,
+          "norm1_cpu_ms": 11.622,
+          "qkv_tt_ms": 2.941,
+          "attn_cpu_ms": 180.489,
+          "proj_tt_residual_ms": 4.534,
+          "norm2_cpu_ms": 10.246,
+          "fc1_tt_ms": 2.687,
+          "fc3_tt_ms": 0.772,
+          "gated_cpu_ms": 43.925,
+          "fc2_tt_residual_ms": 9.925,
+          "total_ms": 267.141
+        },
+        {
+          "index": 8,
+          "norm1_cpu_ms": 9.94,
+          "qkv_tt_ms": 2.794,
+          "attn_cpu_ms": 178.473,
+          "proj_tt_residual_ms": 4.59,
+          "norm2_cpu_ms": 13.441,
+          "fc1_tt_ms": 2.831,
+          "fc3_tt_ms": 0.843,
+          "gated_cpu_ms": 39.435,
+          "fc2_tt_residual_ms": 9.237,
+          "total_ms": 261.584
+        },
+        {
+          "index": 9,
+          "norm1_cpu_ms": 12.867,
+          "qkv_tt_ms": 3.271,
+          "attn_cpu_ms": 181.456,
+          "proj_tt_residual_ms": 4.517,
+          "norm2_cpu_ms": 10.322,
+          "fc1_tt_ms": 2.609,
+          "fc3_tt_ms": 0.643,
+          "gated_cpu_ms": 44.331,
+          "fc2_tt_residual_ms": 9.512,
+          "total_ms": 269.528
+        },
+        {
+          "index": 10,
+          "norm1_cpu_ms": 12.231,
+          "qkv_tt_ms": 4.031,
+          "attn_cpu_ms": 176.558,
+          "proj_tt_residual_ms": 6.712,
+          "norm2_cpu_ms": 9.93,
+          "fc1_tt_ms": 3.986,
+          "fc3_tt_ms": 1.391,
+          "gated_cpu_ms": 40.828,
+          "fc2_tt_residual_ms": 11.855,
+          "total_ms": 267.522
+        },
+        {
+          "index": 11,
+          "norm1_cpu_ms": 12.195,
+          "qkv_tt_ms": 3.115,
+          "attn_cpu_ms": 190.099,
+          "proj_tt_residual_ms": 6.277,
+          "norm2_cpu_ms": 11.398,
+          "fc1_tt_ms": 2.688,
+          "fc3_tt_ms": 0.732,
+          "gated_cpu_ms": 39.313,
+          "fc2_tt_residual_ms": 9.007,
+          "total_ms": 274.824
+        },
+        {
+          "index": 12,
+          "norm1_cpu_ms": 9.426,
+          "qkv_tt_ms": 3.157,
+          "attn_cpu_ms": 208.681,
+          "proj_tt_residual_ms": 4.889,
+          "norm2_cpu_ms": 9.874,
+          "fc1_tt_ms": 3.068,
+          "fc3_tt_ms": 1.205,
+          "gated_cpu_ms": 39.797,
+          "fc2_tt_residual_ms": 8.877,
+          "total_ms": 288.974
+        },
+        {
+          "index": 13,
+          "norm1_cpu_ms": 10.068,
+          "qkv_tt_ms": 2.795,
+          "attn_cpu_ms": 179.978,
+          "proj_tt_residual_ms": 4.298,
+          "norm2_cpu_ms": 10.167,
+          "fc1_tt_ms": 2.824,
+          "fc3_tt_ms": 0.659,
+          "gated_cpu_ms": 41.874,
+          "fc2_tt_residual_ms": 9.675,
+          "total_ms": 262.338
+        },
+        {
+          "index": 14,
+          "norm1_cpu_ms": 10.775,
+          "qkv_tt_ms": 2.933,
+          "attn_cpu_ms": 191.193,
+          "proj_tt_residual_ms": 4.555,
+          "norm2_cpu_ms": 10.812,
+          "fc1_tt_ms": 2.937,
+          "fc3_tt_ms": 0.806,
+          "gated_cpu_ms": 40.282,
+          "fc2_tt_residual_ms": 9.915,
+          "total_ms": 274.208
+        },
+        {
+          "index": 15,
+          "norm1_cpu_ms": 10.71,
+          "qkv_tt_ms": 3.083,
+          "attn_cpu_ms": 170.864,
+          "proj_tt_residual_ms": 4.644,
+          "norm2_cpu_ms": 9.745,
+          "fc1_tt_ms": 3.014,
+          "fc3_tt_ms": 0.883,
+          "gated_cpu_ms": 40.996,
+          "fc2_tt_residual_ms": 10.934,
+          "total_ms": 254.873
+        },
+        {
+          "index": 16,
+          "norm1_cpu_ms": 9.46,
+          "qkv_tt_ms": 3.382,
+          "attn_cpu_ms": 182.698,
+          "proj_tt_residual_ms": 4.776,
+          "norm2_cpu_ms": 10.094,
+          "fc1_tt_ms": 2.737,
+          "fc3_tt_ms": 0.697,
+          "gated_cpu_ms": 42.158,
+          "fc2_tt_residual_ms": 9.657,
+          "total_ms": 265.659
+        },
+        {
+          "index": 17,
+          "norm1_cpu_ms": 12.235,
+          "qkv_tt_ms": 3.227,
+          "attn_cpu_ms": 183.704,
+          "proj_tt_residual_ms": 4.432,
+          "norm2_cpu_ms": 9.166,
+          "fc1_tt_ms": 2.838,
+          "fc3_tt_ms": 0.789,
+          "gated_cpu_ms": 42.317,
+          "fc2_tt_residual_ms": 10.206,
+          "total_ms": 268.914
+        },
+        {
+          "index": 18,
+          "norm1_cpu_ms": 10.085,
+          "qkv_tt_ms": 3.331,
+          "attn_cpu_ms": 189.028,
+          "proj_tt_residual_ms": 4.531,
+          "norm2_cpu_ms": 10.126,
+          "fc1_tt_ms": 2.736,
+          "fc3_tt_ms": 0.777,
+          "gated_cpu_ms": 45.757,
+          "fc2_tt_residual_ms": 9.153,
+          "total_ms": 275.524
+        },
+        {
+          "index": 19,
+          "norm1_cpu_ms": 10.336,
+          "qkv_tt_ms": 2.958,
+          "attn_cpu_ms": 168.642,
+          "proj_tt_residual_ms": 4.685,
+          "norm2_cpu_ms": 9.486,
+          "fc1_tt_ms": 2.627,
+          "fc3_tt_ms": 0.969,
+          "gated_cpu_ms": 35.997,
+          "fc2_tt_residual_ms": 7.99,
+          "total_ms": 243.69
+        },
+        {
+          "index": 20,
+          "norm1_cpu_ms": 11.876,
+          "qkv_tt_ms": 2.77,
+          "attn_cpu_ms": 213.07,
+          "proj_tt_residual_ms": 5.453,
+          "norm2_cpu_ms": 9.911,
+          "fc1_tt_ms": 3.082,
+          "fc3_tt_ms": 1.033,
+          "gated_cpu_ms": 42.921,
+          "fc2_tt_residual_ms": 8.346,
+          "total_ms": 298.462
+        },
+        {
+          "index": 21,
+          "norm1_cpu_ms": 10.307,
+          "qkv_tt_ms": 2.875,
+          "attn_cpu_ms": 184.128,
+          "proj_tt_residual_ms": 4.687,
+          "norm2_cpu_ms": 10.791,
+          "fc1_tt_ms": 2.464,
+          "fc3_tt_ms": 0.644,
+          "gated_cpu_ms": 42.033,
+          "fc2_tt_residual_ms": 7.654,
+          "total_ms": 265.583
+        },
+        {
+          "index": 22,
+          "norm1_cpu_ms": 10.595,
+          "qkv_tt_ms": 2.89,
+          "attn_cpu_ms": 186.708,
+          "proj_tt_residual_ms": 4.71,
+          "norm2_cpu_ms": 9.106,
+          "fc1_tt_ms": 2.579,
+          "fc3_tt_ms": 0.677,
+          "gated_cpu_ms": 41.133,
+          "fc2_tt_residual_ms": 8.867,
+          "total_ms": 267.265
+        },
+        {
+          "index": 23,
+          "norm1_cpu_ms": 9.694,
+          "qkv_tt_ms": 2.755,
+          "attn_cpu_ms": 181.175,
+          "proj_tt_residual_ms": 5.003,
+          "norm2_cpu_ms": 10.687,
+          "fc1_tt_ms": 2.596,
+          "fc3_tt_ms": 0.728,
+          "gated_cpu_ms": 40.383,
+          "fc2_tt_residual_ms": 8.131,
+          "total_ms": 261.152
+        },
+        {
+          "index": 24,
+          "norm1_cpu_ms": 9.944,
+          "qkv_tt_ms": 2.722,
+          "attn_cpu_ms": 219.159,
+          "proj_tt_residual_ms": 4.771,
+          "norm2_cpu_ms": 9.55,
+          "fc1_tt_ms": 2.681,
+          "fc3_tt_ms": 0.911,
+          "gated_cpu_ms": 40.156,
+          "fc2_tt_residual_ms": 7.881,
+          "total_ms": 297.775
+        },
+        {
+          "index": 25,
+          "norm1_cpu_ms": 12.29,
+          "qkv_tt_ms": 2.666,
+          "attn_cpu_ms": 232.278,
+          "proj_tt_residual_ms": 5.022,
+          "norm2_cpu_ms": 10.851,
+          "fc1_tt_ms": 2.656,
+          "fc3_tt_ms": 0.801,
+          "gated_cpu_ms": 39.498,
+          "fc2_tt_residual_ms": 8.421,
+          "total_ms": 314.483
+        },
+        {
+          "index": 26,
+          "norm1_cpu_ms": 10.521,
+          "qkv_tt_ms": 3.1,
+          "attn_cpu_ms": 241.751,
+          "proj_tt_residual_ms": 4.888,
+          "norm2_cpu_ms": 9.813,
+          "fc1_tt_ms": 2.802,
+          "fc3_tt_ms": 0.947,
+          "gated_cpu_ms": 39.413,
+          "fc2_tt_residual_ms": 8.195,
+          "total_ms": 321.43
+        },
+        {
+          "index": 27,
+          "norm1_cpu_ms": 11.185,
+          "qkv_tt_ms": 2.881,
+          "attn_cpu_ms": 234.591,
+          "proj_tt_residual_ms": 4.88,
+          "norm2_cpu_ms": 11.144,
+          "fc1_tt_ms": 2.814,
+          "fc3_tt_ms": 1.047,
+          "gated_cpu_ms": 39.75,
+          "fc2_tt_residual_ms": 8.459,
+          "total_ms": 316.751
+        },
+        {
+          "index": 28,
+          "norm1_cpu_ms": 10.813,
+          "qkv_tt_ms": 3.005,
+          "attn_cpu_ms": 239.359,
+          "proj_tt_residual_ms": 4.857,
+          "norm2_cpu_ms": 10.922,
+          "fc1_tt_ms": 2.62,
+          "fc3_tt_ms": 0.855,
+          "gated_cpu_ms": 41.839,
+          "fc2_tt_residual_ms": 11.518,
+          "total_ms": 325.788
+        },
+        {
+          "index": 29,
+          "norm1_cpu_ms": 10.602,
+          "qkv_tt_ms": 2.703,
+          "attn_cpu_ms": 246.063,
+          "proj_tt_residual_ms": 5.567,
+          "norm2_cpu_ms": 10.032,
+          "fc1_tt_ms": 3.364,
+          "fc3_tt_ms": 1.059,
+          "gated_cpu_ms": 36.199,
+          "fc2_tt_residual_ms": 11.621,
+          "total_ms": 327.21
+        },
+        {
+          "index": 30,
+          "norm1_cpu_ms": 10.853,
+          "qkv_tt_ms": 3.131,
+          "attn_cpu_ms": 246.705,
+          "proj_tt_residual_ms": 7.499,
+          "norm2_cpu_ms": 11.223,
+          "fc1_tt_ms": 4.203,
+          "fc3_tt_ms": 2.044,
+          "gated_cpu_ms": 41.002,
+          "fc2_tt_residual_ms": 12.277,
+          "total_ms": 338.937
+        },
+        {
+          "index": 31,
+          "norm1_cpu_ms": 11.35,
+          "qkv_tt_ms": 3.14,
+          "attn_cpu_ms": 239.887,
+          "proj_tt_residual_ms": 7.776,
+          "norm2_cpu_ms": 10.516,
+          "fc1_tt_ms": 2.996,
+          "fc3_tt_ms": 1.173,
+          "gated_cpu_ms": 42.646,
+          "fc2_tt_residual_ms": 11.727,
+          "total_ms": 331.211
+        },
+        {
+          "index": 32,
+          "norm1_cpu_ms": 10.281,
+          "qkv_tt_ms": 3.103,
+          "attn_cpu_ms": 268.425,
+          "proj_tt_residual_ms": 4.999,
+          "norm2_cpu_ms": 10.852,
+          "fc1_tt_ms": 2.852,
+          "fc3_tt_ms": 1.082,
+          "gated_cpu_ms": 41.633,
+          "fc2_tt_residual_ms": 8.965,
+          "total_ms": 352.192
+        },
+        {
+          "index": 33,
+          "norm1_cpu_ms": 10.913,
+          "qkv_tt_ms": 3.176,
+          "attn_cpu_ms": 269.265,
+          "proj_tt_residual_ms": 5.179,
+          "norm2_cpu_ms": 35.605,
+          "fc1_tt_ms": 3.046,
+          "fc3_tt_ms": 1.156,
+          "gated_cpu_ms": 41.339,
+          "fc2_tt_residual_ms": 9.605,
+          "total_ms": 379.284
+        },
+        {
+          "index": 34,
+          "norm1_cpu_ms": 11.451,
+          "qkv_tt_ms": 3.116,
+          "attn_cpu_ms": 274.428,
+          "proj_tt_residual_ms": 11.292,
+          "norm2_cpu_ms": 11.264,
+          "fc1_tt_ms": 3.098,
+          "fc3_tt_ms": 1.242,
+          "gated_cpu_ms": 77.711,
+          "fc2_tt_residual_ms": 9.394,
+          "total_ms": 402.996
+        },
+        {
+          "index": 35,
+          "norm1_cpu_ms": 12.654,
+          "qkv_tt_ms": 4.839,
+          "attn_cpu_ms": 360.083,
+          "proj_tt_residual_ms": 6.475,
+          "norm2_cpu_ms": 24.225,
+          "fc1_tt_ms": 3.628,
+          "fc3_tt_ms": 1.089,
+          "gated_cpu_ms": 70.982,
+          "fc2_tt_residual_ms": 9.747,
+          "total_ms": 493.722
+        },
+        {
+          "index": 36,
+          "norm1_cpu_ms": 10.058,
+          "qkv_tt_ms": 3.466,
+          "attn_cpu_ms": 303.017,
+          "proj_tt_residual_ms": 5.169,
+          "norm2_cpu_ms": 10.206,
+          "fc1_tt_ms": 2.89,
+          "fc3_tt_ms": 0.886,
+          "gated_cpu_ms": 41.234,
+          "fc2_tt_residual_ms": 9.235,
+          "total_ms": 386.161
+        },
+        {
+          "index": 37,
+          "norm1_cpu_ms": 10.476,
+          "qkv_tt_ms": 3.486,
+          "attn_cpu_ms": 335.558,
+          "proj_tt_residual_ms": 6.005,
+          "norm2_cpu_ms": 11.035,
+          "fc1_tt_ms": 4.021,
+          "fc3_tt_ms": 2.14,
+          "gated_cpu_ms": 42.279,
+          "fc2_tt_residual_ms": 8.964,
+          "total_ms": 423.964
+        },
+        {
+          "index": 38,
+          "norm1_cpu_ms": 11.467,
+          "qkv_tt_ms": 3.321,
+          "attn_cpu_ms": 280.341,
+          "proj_tt_residual_ms": 7.688,
+          "norm2_cpu_ms": 10.927,
+          "fc1_tt_ms": 4.853,
+          "fc3_tt_ms": 2.448,
+          "gated_cpu_ms": 42.539,
+          "fc2_tt_residual_ms": 11.576,
+          "total_ms": 375.16
+        },
+        {
+          "index": 39,
+          "norm1_cpu_ms": 12.516,
+          "qkv_tt_ms": 4.491,
+          "attn_cpu_ms": 303.407,
+          "proj_tt_residual_ms": 6.152,
+          "norm2_cpu_ms": 11.356,
+          "fc1_tt_ms": 3.843,
+          "fc3_tt_ms": 1.749,
+          "gated_cpu_ms": 49.585,
+          "fc2_tt_residual_ms": 8.012,
+          "total_ms": 401.111
+        },
+        {
+          "index": 40,
+          "norm1_cpu_ms": 10.775,
+          "qkv_tt_ms": 2.974,
+          "attn_cpu_ms": 279.279,
+          "proj_tt_residual_ms": 6.387,
+          "norm2_cpu_ms": 11.237,
+          "fc1_tt_ms": 3.663,
+          "fc3_tt_ms": 1.679,
+          "gated_cpu_ms": 74.019,
+          "fc2_tt_residual_ms": 11.652,
+          "total_ms": 401.665
+        },
+        {
+          "index": 41,
+          "norm1_cpu_ms": 10.581,
+          "qkv_tt_ms": 6.793,
+          "attn_cpu_ms": 289.809,
+          "proj_tt_residual_ms": 6.584,
+          "norm2_cpu_ms": 11.691,
+          "fc1_tt_ms": 3.474,
+          "fc3_tt_ms": 1.43,
+          "gated_cpu_ms": 64.04,
+          "fc2_tt_residual_ms": 8.61,
+          "total_ms": 403.012
+        }
+      ],
+      "note": "TT segmentlerinde sync eklenmiş ayrıntılı profil; toplam normal hot latency ile birebir aynı olmayabilir."
+    },
+    "decoder_profile": {
+      "module_totals": {
+        "decoder.lm_head": {
+          "calls": 64,
+          "ms": 1380.212,
+          "avg_ms": 21.566
+        },
+        "decoder.layers.0.mlp": {
+          "calls": 64,
+          "ms": 392.909,
+          "avg_ms": 6.139
+        },
+        "decoder.layers.21.mlp": {
+          "calls": 64,
+          "ms": 364.325,
+          "avg_ms": 5.693
+        },
+        "decoder.layers.20.mlp": {
+          "calls": 64,
+          "ms": 357.481,
+          "avg_ms": 5.586
+        },
+        "decoder.layers.19.mlp": {
+          "calls": 64,
+          "ms": 355.687,
+          "avg_ms": 5.558
+        },
+        "decoder.layers.22.mlp": {
+          "calls": 64,
+          "ms": 350.699,
+          "avg_ms": 5.48
+        },
+        "decoder.layers.23.mlp": {
+          "calls": 64,
+          "ms": 309.725,
+          "avg_ms": 4.839
+        },
+        "decoder.layers.18.mlp": {
+          "calls": 64,
+          "ms": 298.271,
+          "avg_ms": 4.66
+        },
+        "decoder.layers.1.mlp": {
+          "calls": 64,
+          "ms": 283.824,
+          "avg_ms": 4.435
+        },
+        "decoder.layers.3.mlp": {
+          "calls": 64,
+          "ms": 277.554,
+          "avg_ms": 4.337
+        },
+        "decoder.layers.6.mlp": {
+          "calls": 64,
+          "ms": 277.51,
+          "avg_ms": 4.336
+        },
+        "decoder.layers.2.mlp": {
+          "calls": 64,
+          "ms": 276.205,
+          "avg_ms": 4.316
+        },
+        "decoder.layers.5.mlp": {
+          "calls": 64,
+          "ms": 276.09,
+          "avg_ms": 4.314
+        },
+        "decoder.layers.4.mlp": {
+          "calls": 64,
+          "ms": 273.335,
+          "avg_ms": 4.271
+        },
+        "decoder.layers.10.mlp": {
+          "calls": 64,
+          "ms": 272.441,
+          "avg_ms": 4.257
+        },
+        "decoder.layers.7.mlp": {
+          "calls": 64,
+          "ms": 267.992,
+          "avg_ms": 4.187
+        },
+        "decoder.layers.9.mlp": {
+          "calls": 64,
+          "ms": 266.343,
+          "avg_ms": 4.162
+        },
+        "decoder.layers.14.mlp": {
+          "calls": 64,
+          "ms": 265.953,
+          "avg_ms": 4.156
+        },
+        "decoder.layers.11.mlp": {
+          "calls": 64,
+          "ms": 265.007,
+          "avg_ms": 4.141
+        },
+        "decoder.layers.8.mlp": {
+          "calls": 64,
+          "ms": 261.927,
+          "avg_ms": 4.093
+        },
+        "decoder.layers.12.mlp": {
+          "calls": 64,
+          "ms": 260.663,
+          "avg_ms": 4.073
+        },
+        "decoder.layers.15.mlp": {
+          "calls": 64,
+          "ms": 258.476,
+          "avg_ms": 4.039
+        },
+        "decoder.layers.13.mlp": {
+          "calls": 64,
+          "ms": 257.366,
+          "avg_ms": 4.021
+        },
+        "decoder.layers.17.mlp": {
+          "calls": 64,
+          "ms": 254.149,
+          "avg_ms": 3.971
+        },
+        "decoder.layers.24.mlp": {
+          "calls": 64,
+          "ms": 250.727,
+          "avg_ms": 3.918
+        },
+        "decoder.layers.16.mlp": {
+          "calls": 64,
+          "ms": 250.616,
+          "avg_ms": 3.916
+        },
+        "decoder.layers.27.mlp": {
+          "calls": 64,
+          "ms": 249.872,
+          "avg_ms": 3.904
+        },
+        "decoder.layers.25.mlp": {
+          "calls": 64,
+          "ms": 246.201,
+          "avg_ms": 3.847
+        },
+        "decoder.layers.26.mlp": {
+          "calls": 64,
+          "ms": 245.569,
+          "avg_ms": 3.837
+        },
+        "decoder.layers.0.mlp.down_proj": {
+          "calls": 64,
+          "ms": 136.327,
+          "avg_ms": 2.13
+        },
+        "decoder.layers.0.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 133.744,
+          "avg_ms": 2.09
+        },
+        "decoder.layers.21.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 130.566,
+          "avg_ms": 2.04
+        },
+        "decoder.layers.20.mlp.down_proj": {
+          "calls": 64,
+          "ms": 129.511,
+          "avg_ms": 2.024
+        },
+        "decoder.layers.19.mlp.down_proj": {
+          "calls": 64,
+          "ms": 127.89,
+          "avg_ms": 1.998
+        },
+        "decoder.layers.22.mlp.up_proj": {
+          "calls": 64,
+          "ms": 125.921,
+          "avg_ms": 1.968
+        },
+        "decoder.layers.1.self_attn": {
+          "calls": 64,
+          "ms": 120.4,
+          "avg_ms": 1.881
+        },
+        "decoder.layers.0.self_attn": {
+          "calls": 64,
+          "ms": 120.002,
+          "avg_ms": 1.875
+        },
+        "decoder.layers.0.mlp.up_proj": {
+          "calls": 64,
+          "ms": 113.399,
+          "avg_ms": 1.772
+        },
+        "decoder.layers.18.mlp.up_proj": {
+          "calls": 64,
+          "ms": 113.259,
+          "avg_ms": 1.77
+        },
+        "decoder.layers.20.self_attn": {
+          "calls": 64,
+          "ms": 113.251,
+          "avg_ms": 1.77
+        },
+        "decoder.layers.21.mlp.up_proj": {
+          "calls": 64,
+          "ms": 113.195,
+          "avg_ms": 1.769
+        },
+        "decoder.layers.19.self_attn": {
+          "calls": 64,
+          "ms": 113.082,
+          "avg_ms": 1.767
+        },
+        "decoder.layers.22.mlp.down_proj": {
+          "calls": 64,
+          "ms": 112.429,
+          "avg_ms": 1.757
+        },
+        "decoder.layers.21.mlp.down_proj": {
+          "calls": 64,
+          "ms": 112.368,
+          "avg_ms": 1.756
+        },
+        "decoder.layers.19.mlp.up_proj": {
+          "calls": 64,
+          "ms": 111.876,
+          "avg_ms": 1.748
+        },
+        "decoder.layers.21.self_attn": {
+          "calls": 64,
+          "ms": 111.726,
+          "avg_ms": 1.746
+        },
+        "decoder.layers.20.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 111.092,
+          "avg_ms": 1.736
+        },
+        "decoder.layers.23.mlp.up_proj": {
+          "calls": 64,
+          "ms": 111.03,
+          "avg_ms": 1.735
+        },
+        "decoder.layers.23.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 110.984,
+          "avg_ms": 1.734
+        },
+        "decoder.layers.20.mlp.up_proj": {
+          "calls": 64,
+          "ms": 108.542,
+          "avg_ms": 1.696
+        },
+        "decoder.layers.6.self_attn": {
+          "calls": 64,
+          "ms": 106.915,
+          "avg_ms": 1.671
+        },
+        "decoder.layers.23.self_attn": {
+          "calls": 64,
+          "ms": 106.177,
+          "avg_ms": 1.659
+        },
+        "decoder.layers.22.self_attn": {
+          "calls": 64,
+          "ms": 105.199,
+          "avg_ms": 1.644
+        },
+        "decoder.layers.22.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 104.081,
+          "avg_ms": 1.626
+        },
+        "decoder.layers.19.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 104.003,
+          "avg_ms": 1.625
+        },
+        "decoder.layers.10.self_attn": {
+          "calls": 64,
+          "ms": 100.458,
+          "avg_ms": 1.57
+        },
+        "decoder.layers.3.self_attn": {
+          "calls": 64,
+          "ms": 100.266,
+          "avg_ms": 1.567
+        },
+        "decoder.layers.4.self_attn": {
+          "calls": 64,
+          "ms": 99.942,
+          "avg_ms": 1.562
+        },
+        "decoder.layers.7.self_attn": {
+          "calls": 64,
+          "ms": 99.595,
+          "avg_ms": 1.556
+        },
+        "decoder.layers.2.self_attn": {
+          "calls": 64,
+          "ms": 99.565,
+          "avg_ms": 1.556
+        },
+        "decoder.layers.5.self_attn": {
+          "calls": 64,
+          "ms": 97.822,
+          "avg_ms": 1.528
+        },
+        "decoder.layers.15.self_attn": {
+          "calls": 64,
+          "ms": 97.507,
+          "avg_ms": 1.524
+        },
+        "decoder.layers.11.self_attn": {
+          "calls": 64,
+          "ms": 97.101,
+          "avg_ms": 1.517
+        },
+        "decoder.layers.1.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 97.009,
+          "avg_ms": 1.516
+        },
+        "decoder.layers.8.self_attn": {
+          "calls": 64,
+          "ms": 96.756,
+          "avg_ms": 1.512
+        },
+        "decoder.layers.9.self_attn": {
+          "calls": 64,
+          "ms": 96.403,
+          "avg_ms": 1.506
+        },
+        "decoder.layers.18.mlp.down_proj": {
+          "calls": 64,
+          "ms": 95.576,
+          "avg_ms": 1.493
+        },
+        "decoder.layers.12.self_attn": {
+          "calls": 64,
+          "ms": 94.74,
+          "avg_ms": 1.48
+        },
+        "decoder.layers.16.self_attn": {
+          "calls": 64,
+          "ms": 94.19,
+          "avg_ms": 1.472
+        },
+        "decoder.layers.14.self_attn": {
+          "calls": 64,
+          "ms": 93.93,
+          "avg_ms": 1.468
+        },
+        "decoder.layers.24.self_attn": {
+          "calls": 64,
+          "ms": 93.777,
+          "avg_ms": 1.465
+        },
+        "decoder.layers.18.self_attn": {
+          "calls": 64,
+          "ms": 93.699,
+          "avg_ms": 1.464
+        },
+        "decoder.layers.17.self_attn": {
+          "calls": 64,
+          "ms": 93.601,
+          "avg_ms": 1.463
+        },
+        "decoder.layers.25.self_attn": {
+          "calls": 64,
+          "ms": 93.441,
+          "avg_ms": 1.46
+        },
+        "decoder.layers.13.self_attn": {
+          "calls": 64,
+          "ms": 93.428,
+          "avg_ms": 1.46
+        },
+        "decoder.layers.26.self_attn": {
+          "calls": 64,
+          "ms": 92.706,
+          "avg_ms": 1.449
+        },
+        "decoder.layers.27.self_attn": {
+          "calls": 64,
+          "ms": 92.342,
+          "avg_ms": 1.443
+        },
+        "decoder.layers.5.mlp.up_proj": {
+          "calls": 64,
+          "ms": 92.037,
+          "avg_ms": 1.438
+        },
+        "decoder.layers.6.mlp.up_proj": {
+          "calls": 64,
+          "ms": 91.182,
+          "avg_ms": 1.425
+        },
+        "decoder.layers.2.mlp.down_proj": {
+          "calls": 64,
+          "ms": 90.554,
+          "avg_ms": 1.415
+        },
+        "decoder.layers.3.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 90.124,
+          "avg_ms": 1.408
+        },
+        "decoder.layers.3.mlp.up_proj": {
+          "calls": 64,
+          "ms": 89.904,
+          "avg_ms": 1.405
+        },
+        "decoder.layers.10.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 89.87,
+          "avg_ms": 1.404
+        },
+        "decoder.layers.4.mlp.up_proj": {
+          "calls": 64,
+          "ms": 89.235,
+          "avg_ms": 1.394
+        },
+        "decoder.layers.1.mlp.up_proj": {
+          "calls": 64,
+          "ms": 89.152,
+          "avg_ms": 1.393
+        },
+        "decoder.layers.2.mlp.up_proj": {
+          "calls": 64,
+          "ms": 89.001,
+          "avg_ms": 1.391
+        },
+        "decoder.layers.6.mlp.down_proj": {
+          "calls": 64,
+          "ms": 88.609,
+          "avg_ms": 1.385
+        },
+        "decoder.layers.6.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 88.354,
+          "avg_ms": 1.381
+        },
+        "decoder.layers.3.mlp.down_proj": {
+          "calls": 64,
+          "ms": 88.338,
+          "avg_ms": 1.38
+        },
+        "decoder.layers.7.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 88.314,
+          "avg_ms": 1.38
+        },
+        "decoder.layers.1.mlp.down_proj": {
+          "calls": 64,
+          "ms": 88.232,
+          "avg_ms": 1.379
+        },
+        "decoder.layers.11.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 87.851,
+          "avg_ms": 1.373
+        },
+        "decoder.layers.5.mlp.down_proj": {
+          "calls": 64,
+          "ms": 87.705,
+          "avg_ms": 1.37
+        },
+        "decoder.layers.4.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 87.67,
+          "avg_ms": 1.37
+        },
+        "decoder.layers.7.mlp.up_proj": {
+          "calls": 64,
+          "ms": 87.635,
+          "avg_ms": 1.369
+        },
+        "decoder.layers.9.mlp.up_proj": {
+          "calls": 64,
+          "ms": 87.622,
+          "avg_ms": 1.369
+        },
+        "decoder.layers.4.mlp.down_proj": {
+          "calls": 64,
+          "ms": 87.411,
+          "avg_ms": 1.366
+        },
+        "decoder.layers.5.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 87.344,
+          "avg_ms": 1.365
+        },
+        "decoder.layers.14.mlp.up_proj": {
+          "calls": 64,
+          "ms": 87.257,
+          "avg_ms": 1.363
+        },
+        "decoder.layers.10.mlp.up_proj": {
+          "calls": 64,
+          "ms": 87.236,
+          "avg_ms": 1.363
+        },
+        "decoder.layers.8.mlp.up_proj": {
+          "calls": 64,
+          "ms": 87.014,
+          "avg_ms": 1.36
+        },
+        "decoder.layers.2.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 86.857,
+          "avg_ms": 1.357
+        },
+        "decoder.layers.9.mlp.down_proj": {
+          "calls": 64,
+          "ms": 86.853,
+          "avg_ms": 1.357
+        },
+        "decoder.layers.11.mlp.up_proj": {
+          "calls": 64,
+          "ms": 86.769,
+          "avg_ms": 1.356
+        },
+        "decoder.layers.10.mlp.down_proj": {
+          "calls": 64,
+          "ms": 86.355,
+          "avg_ms": 1.349
+        },
+        "decoder.layers.12.mlp.up_proj": {
+          "calls": 64,
+          "ms": 85.779,
+          "avg_ms": 1.34
+        },
+        "decoder.layers.15.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 85.58,
+          "avg_ms": 1.337
+        },
+        "decoder.layers.14.mlp.down_proj": {
+          "calls": 64,
+          "ms": 85.515,
+          "avg_ms": 1.336
+        },
+        "decoder.layers.13.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 84.246,
+          "avg_ms": 1.316
+        },
+        "decoder.layers.14.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 84.229,
+          "avg_ms": 1.316
+        },
+        "decoder.layers.15.mlp.up_proj": {
+          "calls": 64,
+          "ms": 83.761,
+          "avg_ms": 1.309
+        },
+        "decoder.layers.7.mlp.down_proj": {
+          "calls": 64,
+          "ms": 83.551,
+          "avg_ms": 1.305
+        },
+        "decoder.layers.24.mlp.up_proj": {
+          "calls": 64,
+          "ms": 83.387,
+          "avg_ms": 1.303
+        },
+        "decoder.layers.8.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 83.276,
+          "avg_ms": 1.301
+        },
+        "decoder.layers.12.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 83.141,
+          "avg_ms": 1.299
+        },
+        "decoder.layers.9.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 83.105,
+          "avg_ms": 1.299
+        },
+        "decoder.layers.12.mlp.down_proj": {
+          "calls": 64,
+          "ms": 83.062,
+          "avg_ms": 1.298
+        },
+        "decoder.layers.8.mlp.down_proj": {
+          "calls": 64,
+          "ms": 82.783,
+          "avg_ms": 1.293
+        },
+        "decoder.layers.13.mlp.up_proj": {
+          "calls": 64,
+          "ms": 82.704,
+          "avg_ms": 1.292
+        },
+        "decoder.layers.17.mlp.up_proj": {
+          "calls": 64,
+          "ms": 82.516,
+          "avg_ms": 1.289
+        },
+        "decoder.layers.13.mlp.down_proj": {
+          "calls": 64,
+          "ms": 82.121,
+          "avg_ms": 1.283
+        },
+        "decoder.layers.17.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 82.118,
+          "avg_ms": 1.283
+        },
+        "decoder.layers.11.mlp.down_proj": {
+          "calls": 64,
+          "ms": 82.041,
+          "avg_ms": 1.282
+        },
+        "decoder.layers.27.mlp.down_proj": {
+          "calls": 64,
+          "ms": 81.63,
+          "avg_ms": 1.275
+        },
+        "decoder.layers.17.mlp.down_proj": {
+          "calls": 64,
+          "ms": 81.321,
+          "avg_ms": 1.271
+        },
+        "decoder.layers.16.mlp.up_proj": {
+          "calls": 64,
+          "ms": 81.148,
+          "avg_ms": 1.268
+        },
+        "decoder.layers.15.mlp.down_proj": {
+          "calls": 64,
+          "ms": 80.872,
+          "avg_ms": 1.264
+        },
+        "decoder.layers.16.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 80.87,
+          "avg_ms": 1.264
+        },
+        "decoder.layers.18.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 80.801,
+          "avg_ms": 1.263
+        },
+        "decoder.layers.16.mlp.down_proj": {
+          "calls": 64,
+          "ms": 80.595,
+          "avg_ms": 1.259
+        },
+        "decoder.layers.27.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 80.374,
+          "avg_ms": 1.256
+        },
+        "decoder.layers.26.mlp.up_proj": {
+          "calls": 64,
+          "ms": 80.163,
+          "avg_ms": 1.253
+        },
+        "decoder.layers.27.mlp.up_proj": {
+          "calls": 64,
+          "ms": 79.861,
+          "avg_ms": 1.248
+        },
+        "decoder.layers.25.mlp.up_proj": {
+          "calls": 64,
+          "ms": 79.641,
+          "avg_ms": 1.244
+        },
+        "decoder.layers.24.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 79.626,
+          "avg_ms": 1.244
+        },
+        "decoder.layers.25.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 79.564,
+          "avg_ms": 1.243
+        },
+        "decoder.layers.26.mlp.down_proj": {
+          "calls": 64,
+          "ms": 79.56,
+          "avg_ms": 1.243
+        },
+        "decoder.layers.23.mlp.down_proj": {
+          "calls": 64,
+          "ms": 79.47,
+          "avg_ms": 1.242
+        },
+        "decoder.layers.24.mlp.down_proj": {
+          "calls": 64,
+          "ms": 79.439,
+          "avg_ms": 1.241
+        },
+        "decoder.layers.25.mlp.down_proj": {
+          "calls": 64,
+          "ms": 79.065,
+          "avg_ms": 1.235
+        },
+        "decoder.layers.26.mlp.gate_proj": {
+          "calls": 64,
+          "ms": 77.888,
+          "avg_ms": 1.217
+        },
+        "decoder.layers.0.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 28.269,
+          "avg_ms": 0.442
+        },
+        "decoder.layers.1.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 26.615,
+          "avg_ms": 0.416
+        },
+        "decoder.layers.1.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 25.69,
+          "avg_ms": 0.401
+        },
+        "decoder.layers.0.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 25.484,
+          "avg_ms": 0.398
+        },
+        "decoder.layers.19.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 25.228,
+          "avg_ms": 0.394
+        },
+        "decoder.layers.20.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 24.949,
+          "avg_ms": 0.39
+        },
+        "decoder.layers.19.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 24.776,
+          "avg_ms": 0.387
+        },
+        "decoder.layers.21.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 24.479,
+          "avg_ms": 0.382
+        },
+        "decoder.layers.21.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 24.455,
+          "avg_ms": 0.382
+        },
+        "decoder.layers.20.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 22.949,
+          "avg_ms": 0.359
+        },
+        "decoder.layers.23.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 22.427,
+          "avg_ms": 0.35
+        },
+        "decoder.layers.22.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 22.308,
+          "avg_ms": 0.349
+        },
+        "decoder.layers.23.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 22.157,
+          "avg_ms": 0.346
+        },
+        "decoder.layers.22.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 22.075,
+          "avg_ms": 0.345
+        },
+        "decoder.layers.6.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 20.556,
+          "avg_ms": 0.321
+        },
+        "decoder.layers.3.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 20.014,
+          "avg_ms": 0.313
+        },
+        "decoder.layers.7.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 19.537,
+          "avg_ms": 0.305
+        },
+        "decoder.layers.6.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 19.256,
+          "avg_ms": 0.301
+        },
+        "decoder.layers.4.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 18.683,
+          "avg_ms": 0.292
+        },
+        "decoder.rotary_emb": {
+          "calls": 64,
+          "ms": 18.644,
+          "avg_ms": 0.291
+        },
+        "decoder.layers.5.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 18.497,
+          "avg_ms": 0.289
+        },
+        "decoder.layers.3.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 18.268,
+          "avg_ms": 0.285
+        },
+        "decoder.layers.10.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 18.213,
+          "avg_ms": 0.285
+        },
+        "decoder.layers.2.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 18.193,
+          "avg_ms": 0.284
+        },
+        "decoder.layers.11.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 18.019,
+          "avg_ms": 0.282
+        },
+        "decoder.layers.2.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 17.974,
+          "avg_ms": 0.281
+        },
+        "decoder.layers.15.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 17.972,
+          "avg_ms": 0.281
+        },
+        "decoder.layers.4.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 17.927,
+          "avg_ms": 0.28
+        },
+        "decoder.layers.5.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 17.878,
+          "avg_ms": 0.279
+        },
+        "decoder.layers.24.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 17.847,
+          "avg_ms": 0.279
+        },
+        "decoder.layers.7.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 17.784,
+          "avg_ms": 0.278
+        },
+        "decoder.layers.15.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 17.648,
+          "avg_ms": 0.276
+        },
+        "decoder.layers.11.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 17.55,
+          "avg_ms": 0.274
+        },
+        "decoder.layers.9.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 17.467,
+          "avg_ms": 0.273
+        },
+        "decoder.layers.10.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 17.452,
+          "avg_ms": 0.273
+        },
+        "decoder.layers.8.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 17.424,
+          "avg_ms": 0.272
+        },
+        "decoder.layers.13.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 17.372,
+          "avg_ms": 0.271
+        },
+        "decoder.layers.12.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 17.338,
+          "avg_ms": 0.271
+        },
+        "decoder.layers.16.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 17.29,
+          "avg_ms": 0.27
+        },
+        "decoder.layers.14.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 17.252,
+          "avg_ms": 0.27
+        },
+        "decoder.layers.8.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 17.064,
+          "avg_ms": 0.267
+        },
+        "decoder.layers.17.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 16.979,
+          "avg_ms": 0.265
+        },
+        "decoder.layers.18.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 16.969,
+          "avg_ms": 0.265
+        },
+        "decoder.layers.9.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.965,
+          "avg_ms": 0.265
+        },
+        "decoder.layers.14.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.96,
+          "avg_ms": 0.265
+        },
+        "decoder.layers.18.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.959,
+          "avg_ms": 0.265
+        },
+        "decoder.layers.25.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 16.797,
+          "avg_ms": 0.262
+        },
+        "decoder.layers.26.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 16.795,
+          "avg_ms": 0.262
+        },
+        "decoder.layers.16.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.792,
+          "avg_ms": 0.262
+        },
+        "decoder.layers.27.self_attn.q_proj": {
+          "calls": 64,
+          "ms": 16.757,
+          "avg_ms": 0.262
+        },
+        "decoder.layers.17.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.717,
+          "avg_ms": 0.261
+        },
+        "decoder.layers.13.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.654,
+          "avg_ms": 0.26
+        },
+        "decoder.layers.24.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.604,
+          "avg_ms": 0.259
+        },
+        "decoder.layers.26.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.589,
+          "avg_ms": 0.259
+        },
+        "decoder.layers.12.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.584,
+          "avg_ms": 0.259
+        },
+        "decoder.layers.25.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.481,
+          "avg_ms": 0.258
+        },
+        "decoder.layers.27.self_attn.o_proj": {
+          "calls": 64,
+          "ms": 16.41,
+          "avg_ms": 0.256
+        },
+        "decoder.layers.1.input_layernorm": {
+          "calls": 64,
+          "ms": 11.108,
+          "avg_ms": 0.174
+        },
+        "decoder.layers.2.input_layernorm": {
+          "calls": 64,
+          "ms": 11.093,
+          "avg_ms": 0.173
+        },
+        "decoder.layers.8.input_layernorm": {
+          "calls": 64,
+          "ms": 10.921,
+          "avg_ms": 0.171
+        },
+        "decoder.layers.4.input_layernorm": {
+          "calls": 64,
+          "ms": 10.889,
+          "avg_ms": 0.17
+        },
+        "decoder.layers.10.input_layernorm": {
+          "calls": 64,
+          "ms": 10.866,
+          "avg_ms": 0.17
+        },
+        "decoder.layers.7.input_layernorm": {
+          "calls": 64,
+          "ms": 10.845,
+          "avg_ms": 0.169
+        },
+        "decoder.layers.5.input_layernorm": {
+          "calls": 64,
+          "ms": 10.808,
+          "avg_ms": 0.169
+        },
+        "decoder.layers.21.input_layernorm": {
+          "calls": 64,
+          "ms": 10.769,
+          "avg_ms": 0.168
+        },
+        "decoder.layers.6.input_layernorm": {
+          "calls": 64,
+          "ms": 10.746,
+          "avg_ms": 0.168
+        },
+        "decoder.layers.3.input_layernorm": {
+          "calls": 64,
+          "ms": 10.739,
+          "avg_ms": 0.168
+        },
+        "decoder.layers.15.input_layernorm": {
+          "calls": 64,
+          "ms": 10.732,
+          "avg_ms": 0.168
+        },
+        "decoder.layers.17.input_layernorm": {
+          "calls": 64,
+          "ms": 10.578,
+          "avg_ms": 0.165
+        },
+        "decoder.layers.24.input_layernorm": {
+          "calls": 64,
+          "ms": 10.524,
+          "avg_ms": 0.164
+        },
+        "decoder.layers.19.input_layernorm": {
+          "calls": 64,
+          "ms": 10.496,
+          "avg_ms": 0.164
+        },
+        "decoder.layers.9.input_layernorm": {
+          "calls": 64,
+          "ms": 10.471,
+          "avg_ms": 0.164
+        },
+        "decoder.final_norm": {
+          "calls": 64,
+          "ms": 10.463,
+          "avg_ms": 0.163
+        },
+        "decoder.layers.27.input_layernorm": {
+          "calls": 64,
+          "ms": 10.445,
+          "avg_ms": 0.163
+        },
+        "decoder.layers.11.input_layernorm": {
+          "calls": 64,
+          "ms": 10.444,
+          "avg_ms": 0.163
+        },
+        "decoder.layers.25.input_layernorm": {
+          "calls": 64,
+          "ms": 10.436,
+          "avg_ms": 0.163
+        },
+        "decoder.layers.13.input_layernorm": {
+          "calls": 64,
+          "ms": 10.429,
+          "avg_ms": 0.163
+        },
+        "decoder.layers.14.input_layernorm": {
+          "calls": 64,
+          "ms": 10.421,
+          "avg_ms": 0.163
+        },
+        "decoder.layers.20.input_layernorm": {
+          "calls": 64,
+          "ms": 10.369,
+          "avg_ms": 0.162
+        },
+        "decoder.layers.23.input_layernorm": {
+          "calls": 64,
+          "ms": 10.252,
+          "avg_ms": 0.16
+        },
+        "decoder.layers.26.input_layernorm": {
+          "calls": 64,
+          "ms": 10.225,
+          "avg_ms": 0.16
+        },
+        "decoder.layers.16.input_layernorm": {
+          "calls": 64,
+          "ms": 10.215,
+          "avg_ms": 0.16
+        },
+        "decoder.layers.18.input_layernorm": {
+          "calls": 64,
+          "ms": 10.145,
+          "avg_ms": 0.159
+        },
+        "decoder.layers.12.input_layernorm": {
+          "calls": 64,
+          "ms": 10.077,
+          "avg_ms": 0.157
+        },
+        "decoder.layers.22.input_layernorm": {
+          "calls": 64,
+          "ms": 10.072,
+          "avg_ms": 0.157
+        },
+        "decoder.layers.0.input_layernorm": {
+          "calls": 64,
+          "ms": 8.968,
+          "avg_ms": 0.14
+        },
+        "decoder.layers.1.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 8.402,
+          "avg_ms": 0.131
+        },
+        "decoder.layers.2.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 8.189,
+          "avg_ms": 0.128
+        },
+        "decoder.layers.3.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 8.044,
+          "avg_ms": 0.126
+        },
+        "decoder.layers.4.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 8.025,
+          "avg_ms": 0.125
+        },
+        "decoder.layers.7.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.975,
+          "avg_ms": 0.125
+        },
+        "decoder.layers.10.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.911,
+          "avg_ms": 0.124
+        },
+        "decoder.layers.5.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.846,
+          "avg_ms": 0.123
+        },
+        "decoder.layers.6.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.832,
+          "avg_ms": 0.122
+        },
+        "decoder.layers.15.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.783,
+          "avg_ms": 0.122
+        },
+        "decoder.layers.11.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.769,
+          "avg_ms": 0.121
+        },
+        "decoder.layers.8.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.733,
+          "avg_ms": 0.121
+        },
+        "decoder.layers.9.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.724,
+          "avg_ms": 0.121
+        },
+        "decoder.layers.0.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.599,
+          "avg_ms": 0.119
+        },
+        "decoder.layers.19.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.595,
+          "avg_ms": 0.119
+        },
+        "decoder.layers.27.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.574,
+          "avg_ms": 0.118
+        },
+        "decoder.layers.13.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.573,
+          "avg_ms": 0.118
+        },
+        "decoder.layers.14.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.552,
+          "avg_ms": 0.118
+        },
+        "decoder.layers.17.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.461,
+          "avg_ms": 0.117
+        },
+        "decoder.layers.18.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.439,
+          "avg_ms": 0.116
+        },
+        "decoder.layers.16.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.429,
+          "avg_ms": 0.116
+        },
+        "decoder.layers.24.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.41,
+          "avg_ms": 0.116
+        },
+        "decoder.layers.23.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.366,
+          "avg_ms": 0.115
+        },
+        "decoder.layers.21.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.331,
+          "avg_ms": 0.115
+        },
+        "decoder.layers.12.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.33,
+          "avg_ms": 0.115
+        },
+        "decoder.layers.26.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.324,
+          "avg_ms": 0.114
+        },
+        "decoder.layers.22.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.31,
+          "avg_ms": 0.114
+        },
+        "decoder.layers.25.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.296,
+          "avg_ms": 0.114
+        },
+        "decoder.layers.20.post_attention_layernorm": {
+          "calls": 64,
+          "ms": 7.197,
+          "avg_ms": 0.112
+        },
+        "decoder.layers.20.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 6.961,
+          "avg_ms": 0.109
+        },
+        "decoder.layers.0.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 5.743,
+          "avg_ms": 0.09
+        },
+        "decoder.layers.1.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 5.731,
+          "avg_ms": 0.09
+        },
+        "decoder.layers.21.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 5.489,
+          "avg_ms": 0.086
+        },
+        "decoder.layers.0.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 5.442,
+          "avg_ms": 0.085
+        },
+        "decoder.layers.1.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 5.408,
+          "avg_ms": 0.085
+        },
+        "decoder.layers.19.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 5.324,
+          "avg_ms": 0.083
+        },
+        "decoder.layers.20.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 5.284,
+          "avg_ms": 0.083
+        },
+        "decoder.layers.19.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 5.191,
+          "avg_ms": 0.081
+        },
+        "decoder.layers.21.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 5.125,
+          "avg_ms": 0.08
+        },
+        "decoder.layers.23.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.874,
+          "avg_ms": 0.076
+        },
+        "decoder.layers.22.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.872,
+          "avg_ms": 0.076
+        },
+        "decoder.layers.23.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.674,
+          "avg_ms": 0.073
+        },
+        "decoder.layers.22.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.59,
+          "avg_ms": 0.072
+        },
+        "decoder.layers.15.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.437,
+          "avg_ms": 0.069
+        },
+        "decoder.layers.7.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.427,
+          "avg_ms": 0.069
+        },
+        "decoder.layers.4.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.422,
+          "avg_ms": 0.069
+        },
+        "decoder.layers.2.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.382,
+          "avg_ms": 0.068
+        },
+        "decoder.layers.2.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.379,
+          "avg_ms": 0.068
+        },
+        "decoder.layers.3.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.374,
+          "avg_ms": 0.068
+        },
+        "decoder.layers.5.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.367,
+          "avg_ms": 0.068
+        },
+        "decoder.layers.6.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.36,
+          "avg_ms": 0.068
+        },
+        "decoder.layers.7.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.353,
+          "avg_ms": 0.068
+        },
+        "decoder.layers.10.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.348,
+          "avg_ms": 0.068
+        },
+        "decoder.layers.15.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.276,
+          "avg_ms": 0.067
+        },
+        "decoder.layers.4.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.257,
+          "avg_ms": 0.067
+        },
+        "decoder.layers.11.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.248,
+          "avg_ms": 0.066
+        },
+        "decoder.layers.14.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.203,
+          "avg_ms": 0.066
+        },
+        "decoder.layers.17.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.189,
+          "avg_ms": 0.065
+        },
+        "decoder.layers.9.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.188,
+          "avg_ms": 0.065
+        },
+        "decoder.layers.8.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.164,
+          "avg_ms": 0.065
+        },
+        "decoder.layers.16.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.146,
+          "avg_ms": 0.065
+        },
+        "decoder.layers.18.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.138,
+          "avg_ms": 0.065
+        },
+        "decoder.layers.13.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.13,
+          "avg_ms": 0.065
+        },
+        "decoder.layers.3.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.126,
+          "avg_ms": 0.064
+        },
+        "decoder.layers.12.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 4.1,
+          "avg_ms": 0.064
+        },
+        "decoder.layers.6.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.095,
+          "avg_ms": 0.064
+        },
+        "decoder.layers.10.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.065,
+          "avg_ms": 0.064
+        },
+        "decoder.layers.17.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.039,
+          "avg_ms": 0.063
+        },
+        "decoder.layers.11.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.02,
+          "avg_ms": 0.063
+        },
+        "decoder.layers.5.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 4.0,
+          "avg_ms": 0.062
+        },
+        "decoder.layers.27.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 3.991,
+          "avg_ms": 0.062
+        },
+        "decoder.layers.26.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 3.971,
+          "avg_ms": 0.062
+        },
+        "decoder.layers.25.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 3.97,
+          "avg_ms": 0.062
+        },
+        "decoder.layers.9.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.961,
+          "avg_ms": 0.062
+        },
+        "decoder.layers.16.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.943,
+          "avg_ms": 0.062
+        },
+        "decoder.layers.13.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.941,
+          "avg_ms": 0.062
+        },
+        "decoder.layers.24.self_attn.k_proj": {
+          "calls": 64,
+          "ms": 3.94,
+          "avg_ms": 0.062
+        },
+        "decoder.layers.8.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.925,
+          "avg_ms": 0.061
+        },
+        "decoder.layers.26.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.911,
+          "avg_ms": 0.061
+        },
+        "decoder.layers.18.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.911,
+          "avg_ms": 0.061
+        },
+        "decoder.layers.14.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.866,
+          "avg_ms": 0.06
+        },
+        "decoder.layers.12.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.847,
+          "avg_ms": 0.06
+        },
+        "decoder.layers.27.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.836,
+          "avg_ms": 0.06
+        },
+        "decoder.layers.25.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.777,
+          "avg_ms": 0.059
+        },
+        "decoder.layers.24.self_attn.v_proj": {
+          "calls": 64,
+          "ms": 3.755,
+          "avg_ms": 0.059
+        },
+        "decoder.embed_tokens": {
+          "calls": 63,
+          "ms": 3.144,
+          "avg_ms": 0.05
+        }
+      },
+      "top_modules": [
+        {
+          "name": "decoder.lm_head",
+          "calls": 64,
+          "ms": 1380.212,
+          "avg_ms": 21.566
+        },
+        {
+          "name": "decoder.layers.0.mlp",
+          "calls": 64,
+          "ms": 392.909,
+          "avg_ms": 6.139
+        },
+        {
+          "name": "decoder.layers.21.mlp",
+          "calls": 64,
+          "ms": 364.325,
+          "avg_ms": 5.693
+        },
+        {
+          "name": "decoder.layers.20.mlp",
+          "calls": 64,
+          "ms": 357.481,
+          "avg_ms": 5.586
+        },
+        {
+          "name": "decoder.layers.19.mlp",
+          "calls": 64,
+          "ms": 355.687,
+          "avg_ms": 5.558
+        },
+        {
+          "name": "decoder.layers.22.mlp",
+          "calls": 64,
+          "ms": 350.699,
+          "avg_ms": 5.48
+        },
+        {
+          "name": "decoder.layers.23.mlp",
+          "calls": 64,
+          "ms": 309.725,
+          "avg_ms": 4.839
+        },
+        {
+          "name": "decoder.layers.18.mlp",
+          "calls": 64,
+          "ms": 298.271,
+          "avg_ms": 4.66
+        },
+        {
+          "name": "decoder.layers.1.mlp",
+          "calls": 64,
+          "ms": 283.824,
+          "avg_ms": 4.435
+        },
+        {
+          "name": "decoder.layers.3.mlp",
+          "calls": 64,
+          "ms": 277.554,
+          "avg_ms": 4.337
+        },
+        {
+          "name": "decoder.layers.6.mlp",
+          "calls": 64,
+          "ms": 277.51,
+          "avg_ms": 4.336
+        },
+        {
+          "name": "decoder.layers.2.mlp",
+          "calls": 64,
+          "ms": 276.205,
+          "avg_ms": 4.316
+        },
+        {
+          "name": "decoder.layers.5.mlp",
+          "calls": 64,
+          "ms": 276.09,
+          "avg_ms": 4.314
+        },
+        {
+          "name": "decoder.layers.4.mlp",
+          "calls": 64,
+          "ms": 273.335,
+          "avg_ms": 4.271
+        },
+        {
+          "name": "decoder.layers.10.mlp",
+          "calls": 64,
+          "ms": 272.441,
+          "avg_ms": 4.257
+        },
+        {
+          "name": "decoder.layers.7.mlp",
+          "calls": 64,
+          "ms": 267.992,
+          "avg_ms": 4.187
+        },
+        {
+          "name": "decoder.layers.9.mlp",
+          "calls": 64,
+          "ms": 266.343,
+          "avg_ms": 4.162
+        },
+        {
+          "name": "decoder.layers.14.mlp",
+          "calls": 64,
+          "ms": 265.953,
+          "avg_ms": 4.156
+        },
+        {
+          "name": "decoder.layers.11.mlp",
+          "calls": 64,
+          "ms": 265.007,
+          "avg_ms": 4.141
+        },
+        {
+          "name": "decoder.layers.8.mlp",
+          "calls": 64,
+          "ms": 261.927,
+          "avg_ms": 4.093
+        }
+      ],
+      "aggregates": {
+        "embed_tokens_ms": 3.144,
+        "rotary_emb_ms": 18.644,
+        "input_layernorm_ms": 294.083,
+        "self_attn_total_ms": 2818.021,
+        "q_proj_ms": 548.476,
+        "k_proj_ms": 125.574,
+        "v_proj_ms": 121.912,
+        "o_proj_ms": 531.872,
+        "attn_residual_ms": 1490.187,
+        "post_attention_layernorm_ms": 214.019,
+        "mlp_total_ms": 7966.917,
+        "gate_proj_ms": 2562.681,
+        "up_proj_ms": 2600.226,
+        "down_proj_ms": 2559.183,
+        "mlp_residual_ms": 244.827,
+        "final_norm_ms": 10.463,
+        "lm_head_ms": 1380.212
+      }
+    }
+  }
+}

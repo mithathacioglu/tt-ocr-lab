@@ -1,0 +1,54 @@
+dots.ocr benchmark update
+
+model target
+- default model path switched to rednote-hilab/dots.ocr in main entrypoints
+- dots.ocr processor compatibility shim added so AutoProcessor can load on the current transformers stack
+
+small-sample checks
+- iam_ocr_image.jpg
+  - dots.mocr hot: 1898.118 ms, output: "industrie"
+  - dots.ocr hot: 1733.35 ms, output: ""
+- we-love-optiic.png
+  - dots.mocr hot: 2188.698 ms, output: "We love Optiic!"
+  - dots.ocr hot: 2146.792 ms, output: "We love Optiic!"
+
+document-page checks
+- 1.pdf first page
+  - dots.mocr hot: 14928.892 ms, output starts with:
+    "T.C. BAKIRKÖY 2. AİLE MAHKEMESİ ... Esas No ..."
+  - dots.ocr hot: 14590.948 ms, output starts with:
+    "T.C. BAKIRKÖY 2. AİLE MAHKEMESİ ... Eras No ..."
+  - result: dots.ocr is slightly faster but has correctness drift on a key token
+
+- 3.1.pdf page 1
+  - dots.ocr hot: 9010.955 ms
+  - output: empty string
+
+- 3.1.pdf page 2
+  - dots.ocr hot: 15503.231 ms
+  - output starts with:
+    "T.C. ANTALYA 2. ASLİYE TİCARET MAHKEMESİ ..."
+
+- 3.1.pdf page 3
+  - dots.ocr hot: 15743.845 ms
+  - output starts with:
+    "<table> ... Sirketi olan ..."
+
+batch status
+- batch=1 is the only safe path
+- batch=2 and above still hit the same sdpa_decode k_chunk_size % 32 constraint
+- the benchmark script was updated to save batch=1 results even when batch=2 fails
+
+low-level build status
+- host-native toolchain build progressed further after multiple clang-15/c++20 compatibility fixes
+- fixed so far:
+  - nanobind warning flag incompatibility
+  - WrappedTensor aggregate construction
+  - missing typename issues in struct_view_driver and generated hal headers
+  - EthConnection constructor / topology_solver dependent typename fixes
+- current build is still blocked by more clang-15 strictness in tt-metal fabric and device_operation code paths
+
+current recommendation
+- if the company specifically requires dots.ocr, keep optimizing on dots.ocr
+- do not replace dots.mocr in any correctness-sensitive path yet
+- use dots.mocr as the local correctness reference until dots.ocr stops producing empty/drifted outputs on document pages

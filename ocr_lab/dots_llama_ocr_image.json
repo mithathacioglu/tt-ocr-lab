@@ -1,0 +1,6 @@
+{
+  "model_path": "rednote-hilab/dots.mocr",
+  "image": "/workspace/tt-mlir/third_party/tt-metal/src/tt-metal/models/tt_transformers/demo/sample_prompts/llama_models/ocr_image.jpeg",
+  "device": "cpu",
+  "output_text": "[{\"bbox\": [5, 6, 435, 24], \"category\": \"Text\", \"text\": \"@skip_for_grayskull(\\\"Requires wormhole_b0 to run\\\")\"}, {\"bbox\": [5, 28, 222, 46], \"category\": \"Text\", \"text\": \"@pytest.mark parametrize(\"}, {\"bbox\": [41, 50, 161, 67], \"category\": \"Text\", \"text\": \"\\\"mesh_device\\\",\"}, {\"bbox\": [41, 71, 939, 112], \"category\": \"Text\", \"text\": \"[\"}, {\"bbox\": [41, 114, 161, 132], \"category\": \"Text\", \"text\": \"indirect=True,\"}, {\"bbox\": [5, 138, 736, 156], \"category\": \"Text\", \"text\": \"def test_llama_vision Encoder_inference(mesh_device, use_program_cache, reset_seeds):\"}, {\"bbox\": [41, 160, 222, "
+}

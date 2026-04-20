@@ -1,0 +1,12 @@
+[
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "image",
+                "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png"
+            },
+            {"type": "text", "text": "Extract the text content from this image."}
+        ]
+    }
+]

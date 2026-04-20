@@ -1,0 +1,6 @@
+{
+  "model_path": "rednote-hilab/dots.mocr",
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+  "device": "cpu",
+  "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli hükümler, Davacı 'e ve davalı 'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018 tarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde kesinleştiği tasdik olunur. 18/01/2018"
+}

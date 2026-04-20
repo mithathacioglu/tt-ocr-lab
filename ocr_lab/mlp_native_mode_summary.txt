@@ -1,0 +1,36 @@
+DOTS decoder MLP mode comparison on the cached IAM decoder dump
+
+Reference dump:
+- /home/mlops/dll_project/ocr_lab/dots_tt_decoder_dump_iam.pt
+
+Modes tested:
+
+1. cpu_silu
+- Result file: /home/mlops/dll_project/ocr_lab/dots_tt_decoder_generate_kvcache_cpu_silu_refresh.json
+- Correct text: industrie
+- Hot average: 7624.927 ms
+- Hot token timings: [2026.854, 1826.653, 1811.153, 1815.332]
+
+2. cpu_silu_tt_mul
+- Result file: /home/mlops/dll_project/ocr_lab/dots_tt_decoder_generate_kvcache_cpu_silu_tt_mul.json
+- Correct text: industrie
+- Hot average: 10894.675 ms
+- Hot token timings: [2889.436, 2586.826, 2634.53, 2613.097]
+- Conclusion: exact SiLU on CPU + TT-side multiply is slower than the baseline.
+
+3. tt_poly2
+- Result file: /home/mlops/dll_project/ocr_lab/dots_tt_decoder_generate_kvcache_tt_poly2.json
+- Wrong text: 不行 C不行不行
+- First run: 73722.267 ms
+- Conclusion: too inaccurate for decoder generation.
+
+4. tt_poly7_datafit
+- Result file: /home/mlops/dll_project/ocr_lab/dots_tt_decoder_generate_kvcache_tt_poly7_datafit.json
+- Wrong text: 折*dx*dx*dx
+- First run: 89978.304 ms
+- Conclusion: fitting the polynomial on real gate activations still does not preserve token output.
+
+Overall conclusion:
+- The current best decoder MLP path is still cpu_silu.
+- Fully TT-native SiLU approximation is not good enough yet.
+- The next real step for a true TT-native MLP is a source-level/custom TT unary activation path instead of polynomial approximation.

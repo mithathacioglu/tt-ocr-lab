@@ -1,0 +1,53 @@
+{
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_3.1pdf_page-2.png",
+  "model_path": "rednote-hilab/dots.ocr",
+  "device_index": "0",
+  "prompt": "Please output the exact text in the image.\n\nReturn plain text only.\n",
+  "repeats": 2,
+  "fixed_page": {
+    "source_width": 1240,
+    "source_height": 1754,
+    "target_width": 468,
+    "target_height": 662,
+    "scaled_width": 468,
+    "scaled_height": 662,
+    "pad_left": 0,
+    "pad_top": 0,
+    "scale": 0.377419
+  },
+  "tt_device": "xla:0",
+  "tt_runtime": {
+    "cache_dir": null,
+    "compile_options": {
+      "optimization_level": "2"
+    },
+    "program_cache_enabled": true,
+    "trace_enabled": false,
+    "trace_region_size": null
+  },
+  "iterations": [
+    {
+      "index": 1,
+      "tt_vision_ms": 8747.132,
+      "cpu_decoder_ms": 12880.163,
+      "total_ms": 21630.503,
+      "output_text": "T.C.\nANTALYA\n2. ASLİYE TİCARET MAHKEMESİ\n\nTENSİP TUTANAGI\n\n<table><tr><td>ESAS NO</td><td>:</td><td>Esas</td></tr><tr><td>HAKIM"
+    },
+    {
+      "index": 2,
+      "tt_vision_ms": 3961.825,
+      "cpu_decoder_ms": 11539.267,
+      "total_ms": 15503.231,
+      "output_text": "T.C.\nANTALYA\n2. ASLİYE TİCARET MAHKEMESİ\n\nTENSİP TUTANAGI\n\n<table><tr><td>ESAS NO</td><td>:</td><td>Esas</td></tr><tr><td>HAKIM"
+    }
+  ],
+  "summary": {
+    "first_total_ms": 21630.503,
+    "first_tt_vision_ms": 8747.132,
+    "first_cpu_decoder_ms": 12880.163,
+    "hot_total_avg_ms": 15503.231,
+    "hot_tt_vision_avg_ms": 3961.825,
+    "hot_cpu_decoder_avg_ms": 11539.267
+  },
+  "output_text": "T.C.\nANTALYA\n2. ASLİYE TİCARET MAHKEMESİ\n\nTENSİP TUTANAGI\n\n<table><tr><td>ESAS NO</td><td>:</td><td>Esas</td></tr><tr><td>HAKIM"
+}

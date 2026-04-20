@@ -1,0 +1,18 @@
+{
+  "resolution": "672x952",
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+  "max_new_tokens": 256,
+  "seq": 835,
+  "pixel_values_shape": [
+    3264,
+    588
+  ],
+  "vision_ms": 45167.83806402236,
+  "prefill_ms": 5172.751625999808,
+  "avg_decode_ms": 37.217518140589505,
+  "avg_warm_ms": 24.703557136568374,
+  "total_decode_ms": 6587.500710884342,
+  "total_e2e_ms": 56928.09040090651,
+  "generated_tokens": 178,
+  "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli hüküml, Davacı 'e ve davalı 'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018 tarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde kesinleştiği tasdik olunur, 18/01/2018"
+}

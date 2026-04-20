@@ -1,0 +1,37 @@
+{
+  "images": [
+    "/home/mlops/Desktop/dosyalar/1_split_2x3/tiles/1_page_1_r0_c0.jpg",
+    "/home/mlops/Desktop/dosyalar/1_split_2x3/tiles/1_page_1_r0_c1.jpg",
+    "/home/mlops/Desktop/dosyalar/1_split_2x3/tiles/1_page_1_r0_c2.jpg",
+    "/home/mlops/Desktop/dosyalar/1_split_2x3/tiles/1_page_1_r1_c0.jpg",
+    "/home/mlops/Desktop/dosyalar/1_split_2x3/tiles/1_page_1_r1_c1.jpg",
+    "/home/mlops/Desktop/dosyalar/1_split_2x3/tiles/1_page_1_r1_c2.jpg"
+  ],
+  "device": "xla:0",
+  "repeats": 1,
+  "results": [
+    {
+      "base_image_count": 6,
+      "batch_size": 1,
+      "effective_image_count": 6,
+      "pixel_values_shape": [
+        20160,
+        588
+      ],
+      "image_grid_thw_shape": [
+        6,
+        3
+      ],
+      "output_shape": [
+        5040,
+        1536
+      ],
+      "timings_ms": [
+        494314.095
+      ],
+      "first_ms": 494314.095,
+      "hot_avg_ms": null,
+      "error": null
+    }
+  ]
+}

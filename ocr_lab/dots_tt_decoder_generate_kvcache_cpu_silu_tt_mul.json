@@ -1,0 +1,54 @@
+{
+  "dump_path": "/home/mlops/dll_project/ocr_lab/dots_tt_decoder_dump_iam.pt",
+  "device_index": "0",
+  "tt_device": "xla:0",
+  "mode": "generate",
+  "mlp_mode": "cpu_silu_tt_mul",
+  "cpu_ms": 2219.512,
+  "cpu_next_token_id": 484,
+  "cpu_next_text": "ind",
+  "iterations": [
+    {
+      "index": 1,
+      "tt_hybrid_ms": 78907.43,
+      "num_generated_tokens": 4,
+      "token_timings_ms": [
+        39271.436,
+        34279.544,
+        2582.536,
+        2564.011
+      ],
+      "generated_token_ids": [
+        484,
+        590,
+        7231,
+        151673
+      ],
+      "generated_text": "industrie",
+      "generated_text_raw": "industrie<|endofassistant|>"
+    },
+    {
+      "index": 2,
+      "tt_hybrid_ms": 10894.675,
+      "num_generated_tokens": 4,
+      "token_timings_ms": [
+        2889.436,
+        2586.826,
+        2634.53,
+        2613.097
+      ],
+      "generated_token_ids": [
+        484,
+        590,
+        7231,
+        151673
+      ],
+      "generated_text": "industrie",
+      "generated_text_raw": "industrie<|endofassistant|>"
+    }
+  ],
+  "summary": {
+    "first_ms": 78907.43,
+    "hot_avg_ms": 10894.675
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+  "max_new_tokens": 512,
+  "prompt": "Please output the exact text in the image.\n\nReturn plain text only.\n",
+  "seq": 427,
+  "prefill_ms": 643.5194899968337,
+  "avg_decode_ms": 22.578690400271476,
+  "avg_warm_ms": 18.374670421499264,
+  "total_decode_ms": 11537.710794538725,
+  "generated_tokens": 512,
+  "output_txt": "/home/mlops/dll_project/ocr_lab/1pdf_ttnn_full_output.txt",
+  "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli hükülm, Davacı 'e ve davah 'e 18/01/2018 tarihinde tebliğ blunmuş, tarafların 18/01/2018 tarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde kesinleştiği tasdik olunmuş, 18/01/2018请输出以下内容，每行以换行符结束: \n“Hello, world! This is a test of the new "
+}

@@ -1,0 +1,11 @@
+{
+  "cpu_ms": 1302.236,
+  "tt_hybrid_ms": 19387.233,
+  "cpu_next_token_id": 484,
+  "tt_next_token_id": 484,
+  "cpu_next_text": "ind",
+  "tt_next_text": "ind",
+  "pcc": 0.998147,
+  "max_abs_diff": 1.71875,
+  "mean_abs_diff": 0.086239
+}

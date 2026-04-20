@@ -1,0 +1,23 @@
+3.1.pdf single-board batch denemesi ozet
+
+Girdi:
+- PDF: /home/mlops/Desktop/dosyalar/3.1.pdf
+- Sayfalar: 1,2,3
+- Sabit sayfa boyutu: 468x662
+- Prompt: sabit OCR promptu
+
+Sonuc:
+- Batch=3 dogrudan TT compiled decoder yolunda calismadi.
+- Hata: ttnn.scaled_dot_product_attention_decode validation failure
+- Ana neden: k_chunk_size % 32 == 0 kosulu saglanmiyor
+- Raporlanan maksimum k_chunk_size: 2
+
+Batch=4 padded workaround:
+- Sayfalar: 1,2,3,1
+- Ama bu da ayni sdpa_decode kernel limitine dustu.
+- Dolayisiyla mevcut tek-board compiled decode yolunda bu shape ile coklu batch pratik degil.
+
+Net hukum:
+- Tek board icin batch=3 bu path'te desteklenmiyor.
+- Batch=4 ile pad ederek asma denemesi de ayni kernel kisitina takildi.
+- Bu yuzden tek-board hizlandirma icin batch buyutmek yerine tek-sayfa hot path optimizasyonu daha gercekci.

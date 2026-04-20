@@ -1,0 +1,8 @@
+- [TT Compiled Decoder Milestone](project_tt_compiled_decoder_milestone.md) — torch.compile decoder working, 11.2s warm, vision still bottleneck
+- [TT-Metal Native Vision Breakthrough](project_tt_metal_native_vision.md) — 330ms vision via tt-metal adapter, accuracy broken (rotary/weight mismatch)
+- [DropIn Vision Fix Progress](project_dropin_vision_fixed.md) — Block 0 exact match, rotary+weight fixed, 42-block accumulation drift remains
+- [Decoder Native Debug Progress](project_decoder_native_debug.md) — weights verified correct, RoPE rotate_half vs interleaved format mismatch
+- [Decode V2 Optimized](project_decode_v2_optimized.md) — fused QKV + on-device head split, 82ms/tok decode (was 110ms), text match verified
+- [CPU fp32 faster than bf16](feedback_fp32_cpu_speed.md) — No AVX512-BF16/AMX on this CPU; fp32 2.8x faster. Always use fp32 for CPU compute.
+- [Qwen2.5-VL TT OCR Breakthrough](project_qwen25vl_tt_ocr.md) — TT vision works (cosine 0.913), correct OCR, 4.7s vision. Both 3B+7B ready.
+- [dots.mocr 5/5 pipeline](project_dots_mocr_5of5_pipeline.md) — 108.5s 5/5 det: NATIVE + N_TT=11 + HF_DECODE + GREEDY; TT decode drift at step 39+

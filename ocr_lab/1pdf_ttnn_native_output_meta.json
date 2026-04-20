@@ -1,0 +1,21 @@
+{
+  "resolution": "native",
+  "seq": 2791,
+  "cpu_prefill_ms": 251755.74824700016,
+  "tt_decode_avg_ms": 25.5432748663276,
+  "tt_decode_warm_ms": 22.737637687574274,
+  "tt_total_decode_ms": 4521.159651339985,
+  "total_e2e_ms": 256276.90789834014,
+  "generated_tokens": 178,
+  "match_ref": false,
+  "keywords_found": [
+    "davalı",
+    "olunmuş",
+    "Dilekçesi"
+  ],
+  "keywords_missing": [
+    "hükümler",
+    "kesinleştiği"
+  ],
+  "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\n\n\nMahkememizden verilen 28/12/2017 tarihli国家, Davacı 'e\nve davalı 'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018\ntarihinde vermiş olduğu \"İstinaan Feragat Dilekçesi\" ile国家, 18/01/2018 tarihinde\nkesinleşştiği tasdik olunur, 18/01/2018"
+}

@@ -1,0 +1,60 @@
+{
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+  "lang": "tr",
+  "ocr_version": "PP-OCRv5",
+  "runs": [
+    {
+      "index": 1,
+      "predict_ms": 2026.136,
+      "line_count": 15,
+      "text_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\nEsas No :\nKarar No :\n- KESİNLEŞME ŞERHİ -\nMahkememizden verilen işbu 28/12/2017 tarihli hüküm, Davacı\n'e\nve davalı\n'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018\ntarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde\nkesinleştiği tasdik olunur.18/01/2018\n·\nUYAP Bilişim Sistemindeki bu dokümana http://vatandas.uyap.govtr adresinden\n=ile erişebilirsiniz.",
+      "first_20_lines": [
+        "T.C.",
+        "BAKIRKÖY",
+        "2. AİLE MAHKEMESİ",
+        "Esas No :",
+        "Karar No :",
+        "- KESİNLEŞME ŞERHİ -",
+        "Mahkememizden verilen işbu 28/12/2017 tarihli hüküm, Davacı",
+        "'e",
+        "ve davalı",
+        "'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018",
+        "tarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde",
+        "kesinleştiği tasdik olunur.18/01/2018",
+        "·",
+        "UYAP Bilişim Sistemindeki bu dokümana http://vatandas.uyap.govtr adresinden",
+        "=ile erişebilirsiniz."
+      ]
+    },
+    {
+      "index": 2,
+      "predict_ms": 1491.434,
+      "line_count": 15,
+      "text_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\nEsas No :\nKarar No :\n- KESİNLEŞME ŞERHİ -\nMahkememizden verilen işbu 28/12/2017 tarihli hüküm, Davacı\n'e\nve davalı\n'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018\ntarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde\nkesinleştiği tasdik olunur.18/01/2018\n·\nUYAP Bilişim Sistemindeki bu dokümana http://vatandas.uyap.govtr adresinden\n=ile erişebilirsiniz.",
+      "first_20_lines": [
+        "T.C.",
+        "BAKIRKÖY",
+        "2. AİLE MAHKEMESİ",
+        "Esas No :",
+        "Karar No :",
+        "- KESİNLEŞME ŞERHİ -",
+        "Mahkememizden verilen işbu 28/12/2017 tarihli hüküm, Davacı",
+        "'e",
+        "ve davalı",
+        "'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018",
+        "tarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde",
+        "kesinleştiği tasdik olunur.18/01/2018",
+        "·",
+        "UYAP Bilişim Sistemindeki bu dokümana http://vatandas.uyap.govtr adresinden",
+        "=ile erişebilirsiniz."
+      ]
+    }
+  ],
+  "mocr_reference_excerpt": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli",
+  "header_checks": {
+    "paddle_contains_bakirkoy": true,
+    "paddle_contains_esas_no": true,
+    "paddle_contains_karar_no": true,
+    "paddle_contains_kesinlesme_serhi": true
+  }
+}

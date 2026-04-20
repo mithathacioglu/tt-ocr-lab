@@ -1,0 +1,26 @@
+1.pdf tek board doğruluk koruma notu
+
+Referans çıkış:
+- 476x674, max_new_tokens=64
+- metin:
+  T.C.
+  BAKIRKÖY
+  2. AİLE MAHKEMESİ
+
+  Esas No :
+
+  Karar No :
+
+  - KESİNLEŞME ŞERHİ -
+
+  Mahkememizden verilen işbu 28/12/2017 tarihli
+
+Karşılaştırılan alt boyutlar:
+- 468x662 -> referansla aynı çıktı
+- 462x654 -> boşluk drift'i ve son token kırpılması başladı
+- 456x646 -> "işbu" -> "ibbu"
+- 452x640 -> "Esas No : 1" gibi açık drift oluştu
+
+Sonuç:
+- Güvenli en düşük sabit boyut: 468x662
+- Bunun altına inildiğinde hız artsa da metin kalitesi bozulmaya başlıyor.

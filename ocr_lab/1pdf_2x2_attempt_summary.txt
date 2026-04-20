@@ -1,0 +1,17 @@
+1.pdf ilk sayfa, tam sayfa TT vision + CPU decoder:
+- cold toplam: 40.740562 sn
+- sıcak toplam: 31.278611 sn
+- sıcak TT vision: 16.860013 sn
+- sıcak decoder: 14.413547 sn
+- kaynak: ocr_lab/tmp_1pdf_page_tt_2runs.json
+
+2x2 tile denemesi:
+- split boyutu: 1653x2338
+- tile boyutları: 826x1169, 827x1169, 826x1169, 827x1169
+- doğal boyut (--no-fixed-page) ile sıcak worker ve tek tile testleri denendi
+- ancak ilk warmup tile koşusu 1 dakikayı aşmasına rağmen sonuç dosyası üretmedi
+- bu yüzden 2x2 tile yolunda mevcut stack ile kabul edilebilir latency elde edilmedi
+
+Yorum:
+- mevcut darboğaz yalnızca decoder değil; tile senaryosunda da cold/warmup compile çok ağır
+- bu haliyle 2x2 tile, 1.pdf için pratik bir hızlanma göstermedi

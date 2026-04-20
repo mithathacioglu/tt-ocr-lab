@@ -1,0 +1,74 @@
+{
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+  "device_index": "0",
+  "sizes": [
+    {
+      "fixed_page_width": 468,
+      "fixed_page_height": 662,
+      "warmup_total_ms": 17021.586,
+      "warmup_tt_vision_ms": 5914.908,
+      "warmup_cpu_decoder_ms": 11102.488,
+      "runs": [
+        {
+          "max_new_tokens": 64,
+          "total_ms": 12897.299,
+          "tt_vision_ms": 3295.151,
+          "cpu_decoder_ms": 9599.458,
+          "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli",
+          "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli"
+        }
+      ]
+    },
+    {
+      "fixed_page_width": 462,
+      "fixed_page_height": 654,
+      "warmup_total_ms": 14167.655,
+      "warmup_tt_vision_ms": 3796.451,
+      "warmup_cpu_decoder_ms": 10368.391,
+      "runs": [
+        {
+          "max_new_tokens": 64,
+          "total_ms": 12063.951,
+          "tt_vision_ms": 2499.179,
+          "cpu_decoder_ms": 9562.851,
+          "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No : \n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarih",
+          "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No : \n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarih"
+        }
+      ]
+    },
+    {
+      "fixed_page_width": 456,
+      "fixed_page_height": 646,
+      "warmup_total_ms": 13556.423,
+      "warmup_tt_vision_ms": 3077.036,
+      "warmup_cpu_decoder_ms": 10476.112,
+      "runs": [
+        {
+          "max_new_tokens": 64,
+          "total_ms": 12434.559,
+          "tt_vision_ms": 2385.877,
+          "cpu_decoder_ms": 10046.574,
+          "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No : \n\nKarar No : \n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen ibbu 28/12/2017 t",
+          "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No : \n\nKarar No : \n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen ibbu 28/12/2017 t"
+        }
+      ]
+    },
+    {
+      "fixed_page_width": 452,
+      "fixed_page_height": 640,
+      "warmup_total_ms": 13766.506,
+      "warmup_tt_vision_ms": 2948.56,
+      "warmup_cpu_decoder_ms": 10815.642,
+      "runs": [
+        {
+          "max_new_tokens": 64,
+          "total_ms": 12403.372,
+          "tt_vision_ms": 2479.139,
+          "cpu_decoder_ms": 9922.066,
+          "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No : 1\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017",
+          "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No : 1\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017"
+        }
+      ]
+    }
+  ]
+}

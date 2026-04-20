@@ -1,0 +1,34 @@
+DOTS TT vision norm fallback summary
+
+What changed
+- Vision path now runs RMSNorm/LayerNorm on CPU.
+- TT keeps the expensive qkv/fc/proj matmul path.
+- Persistent compile cache stays disabled.
+- Runtime trace stays disabled.
+
+Small web image
+- Image: we-love-optiic.png
+- Output: "We love Optiic!"
+- First total: 4563.413 ms
+- Hot total: 2221.320 ms
+- Hot TT vision: 419.459 ms
+- Hot CPU decoder: 1801.272 ms
+
+IAM OCR sample
+- Image: iam_ocr_image.jpg
+- Output: "industrie"
+- First total: 9148.523 ms
+- Hot total avg: 1924.022 ms
+- Hot TT vision avg: 485.208 ms
+- Hot CPU decoder avg: 1438.222 ms
+
+Before vs after on IAM OCR sample
+- Previous hot total avg: ~4240 ms
+- New hot total avg: ~1924 ms
+- Previous hot TT vision avg: ~2550 ms
+- New hot TT vision avg: ~485 ms
+
+Main takeaway
+- The L1 / circular-buffer clash on TT vision was bypassed.
+- Vision latency dropped sharply.
+- The new dominant bottleneck is now CPU decoder latency.

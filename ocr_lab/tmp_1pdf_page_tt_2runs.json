@@ -1,0 +1,53 @@
+{
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+  "model_path": "rednote-hilab/dots.mocr",
+  "device_index": "0",
+  "prompt": "Please output the exact text in the image.\n\nReturn plain text only.\n",
+  "repeats": 2,
+  "fixed_page": {
+    "source_width": 1240,
+    "source_height": 1754,
+    "target_width": 672,
+    "target_height": 952,
+    "scaled_width": 672,
+    "scaled_height": 951,
+    "pad_left": 0,
+    "pad_top": 0,
+    "scale": 0.541935
+  },
+  "tt_device": "xla:0",
+  "tt_runtime": {
+    "cache_dir": null,
+    "compile_options": {
+      "optimization_level": "2"
+    },
+    "program_cache_enabled": true,
+    "trace_enabled": false,
+    "trace_region_size": null
+  },
+  "iterations": [
+    {
+      "index": 1,
+      "tt_vision_ms": 26941.057,
+      "cpu_decoder_ms": 13793.532,
+      "total_ms": 40740.562,
+      "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli"
+    },
+    {
+      "index": 2,
+      "tt_vision_ms": 16860.013,
+      "cpu_decoder_ms": 14413.547,
+      "total_ms": 31278.611,
+      "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli"
+    }
+  ],
+  "summary": {
+    "first_total_ms": 40740.562,
+    "first_tt_vision_ms": 26941.057,
+    "first_cpu_decoder_ms": 13793.532,
+    "hot_total_avg_ms": 31278.611,
+    "hot_tt_vision_avg_ms": 16860.013,
+    "hot_cpu_decoder_avg_ms": 14413.547
+  },
+  "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli"
+}

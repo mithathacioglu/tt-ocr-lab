@@ -1,0 +1,139 @@
+{
+  "pdf": "/home/mlops/Desktop/dosyalar/3.1.pdf",
+  "pages": [
+    1,
+    2,
+    3
+  ],
+  "rendered_pages": [
+    "/home/mlops/dll_project/ocr_lab/tmp_pdf_batch_render/3.1/3.1_page_1.png",
+    "/home/mlops/dll_project/ocr_lab/tmp_pdf_batch_render/3.1/3.1_page_2.png",
+    "/home/mlops/dll_project/ocr_lab/tmp_pdf_batch_render/3.1/3.1_page_3.png"
+  ],
+  "batch_size": 3,
+  "fixed_page_width": 468,
+  "fixed_page_height": 662,
+  "max_new_tokens": 16,
+  "device_index": "0",
+  "pad_prefix_multiple": 32,
+  "padded_seq_len": 448,
+  "single_page": [
+    {
+      "image": "/home/mlops/dll_project/ocr_lab/tmp_pdf_batch_render/3.1/3.1_page_1.png",
+      "vision_ms": 4789.809,
+      "decoder_ms": 1981.678,
+      "total_ms": 6771.487,
+      "token_timings_ms": [
+        595.599,
+        117.424,
+        100.847,
+        84.712,
+        90.744,
+        93.322,
+        87.96,
+        84.235,
+        83.54,
+        83.513,
+        83.297,
+        83.504,
+        84.884,
+        98.256,
+        88.728,
+        84.166
+      ],
+      "text": "\nTACİR\n\nBANKASI A.Ş.\nSUBESİ\n\nF"
+    },
+    {
+      "image": "/home/mlops/dll_project/ocr_lab/tmp_pdf_batch_render/3.1/3.1_page_2.png",
+      "vision_ms": 4128.696,
+      "decoder_ms": 1897.886,
+      "total_ms": 6026.582,
+      "token_timings_ms": [
+        539.579,
+        113.558,
+        81.798,
+        81.293,
+        81.59,
+        98.702,
+        95.738,
+        90.566,
+        81.802,
+        84.088,
+        83.499,
+        82.177,
+        96.547,
+        84.266,
+        84.066,
+        82.587
+      ],
+      "text": "es\nHAKIM\nKATIP\nDAVACI\nDA"
+    },
+    {
+      "image": "/home/mlops/dll_project/ocr_lab/tmp_pdf_batch_render/3.1/3.1_page_3.png",
+      "vision_ms": 4111.571,
+      "decoder_ms": 1864.769,
+      "total_ms": 5976.34,
+      "token_timings_ms": [
+        537.514,
+        115.479,
+        82.075,
+        82.243,
+        83.878,
+        82.211,
+        82.103,
+        85.906,
+        84.92,
+        83.195,
+        83.402,
+        84.241,
+        82.691,
+        82.856,
+        82.66,
+        92.802
+      ],
+      "text": "\n\nEsaş No:\n\nvergi kimlik numaralı, -"
+    }
+  ],
+  "batch": {
+    "vision_total_ms": 13030.076,
+    "decoder_ms": 3098.876,
+    "total_ms": 16128.952,
+    "per_page_ms": 5376.317,
+    "token_timings_ms": [
+      1357.98,
+      157.497,
+      106.704,
+      106.422,
+      108.797,
+      108.531,
+      110.901,
+      116.02,
+      110.028,
+      109.704,
+      110.097,
+      109.933,
+      110.078,
+      109.903,
+      112.454,
+      110.003
+    ],
+    "texts": [
+      "\nTACİR\n\nBANKASI A.Ş.\nSUBESİ\n\nF",
+      "adır.\n\nMahkememize tevzi edilen dava",
+      "\n\nEsaş No:\n\nvergi kimlik numaralı, -"
+    ],
+    "match_single_page": [
+      true,
+      false,
+      true
+    ]
+  },
+  "summary": {
+    "single_total_ms": 18774.409,
+    "single_per_page_avg_ms": 6258.136,
+    "batch_total_ms": 16128.952,
+    "batch_per_page_ms": 5376.317,
+    "throughput_speedup_x": 1.164,
+    "decoder_speedup_x": 1.854
+  }
+}

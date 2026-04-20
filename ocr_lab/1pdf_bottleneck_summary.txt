@@ -1,0 +1,29 @@
+ç1.pdf OCR bottleneck summary
+
+Measured on 2x3 = 6 tile page split:
+- preprocess/build inputs: 323.466 ms
+- cold TT vision: 481518.071 ms
+- cold CPU decoder: 73688.080 ms
+- cold total: 555241.997 ms
+
+Cold-share percentages:
+- preprocess: 0.0583%
+- TT vision: 86.72%
+- CPU decoder: 13.27%
+
+Measured preprocess file:
+- /home/mlops/dll_project/ocr_lab/preprocess_1pdf_6tile.json
+
+Interpretation:
+- Cold start is dominated by TT vision compile/setup.
+- Preprocess is negligible.
+- After cold compile, the next dominant cost is decoder generation.
+- Increasing tile count increases the number of decoder sequences, so single-page latency can get worse even if throughput potential improves.
+
+Practical conclusion:
+- Do not optimize preprocess first.
+- The biggest latency wins will come from:
+  1. keeping a long-lived warm worker
+  2. reducing decoder work (token count / early stop / better decoder path)
+  3. using fewer tiles per page on one board
+  4. scaling out across independent boards instead of pushing more tiles into one board

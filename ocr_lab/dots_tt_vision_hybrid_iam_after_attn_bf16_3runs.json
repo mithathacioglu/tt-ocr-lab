@@ -1,0 +1,61 @@
+{
+  "image": "/home/mlops/dll_project/tt-mlir/third_party/tt-metal/src/tt-metal/models/sample_data/iam_ocr_image.jpg",
+  "model_path": "rednote-hilab/dots.mocr",
+  "device_index": "0",
+  "prompt": "Please output the exact text in the image.\n\nReturn plain text only.\n",
+  "repeats": 3,
+  "fixed_page": {
+    "enabled": false,
+    "source_width": null,
+    "source_height": null,
+    "target_width": null,
+    "target_height": null,
+    "scale": null,
+    "resized_width": null,
+    "resized_height": null,
+    "pad_left": null,
+    "pad_top": null
+  },
+  "tt_device": "xla:0",
+  "tt_runtime": {
+    "cache_dir": null,
+    "compile_options": {
+      "optimization_level": "2"
+    },
+    "program_cache_enabled": true,
+    "trace_enabled": false,
+    "trace_region_size": null
+  },
+  "iterations": [
+    {
+      "index": 1,
+      "tt_vision_ms": 3233.015,
+      "cpu_decoder_ms": 1599.434,
+      "total_ms": 4833.903,
+      "output_text": "industrie"
+    },
+    {
+      "index": 2,
+      "tt_vision_ms": 422.861,
+      "cpu_decoder_ms": 1601.766,
+      "total_ms": 2025.606,
+      "output_text": "industrie"
+    },
+    {
+      "index": 3,
+      "tt_vision_ms": 553.485,
+      "cpu_decoder_ms": 1618.67,
+      "total_ms": 2172.937,
+      "output_text": "industrie"
+    }
+  ],
+  "summary": {
+    "first_total_ms": 4833.903,
+    "first_tt_vision_ms": 3233.015,
+    "first_cpu_decoder_ms": 1599.434,
+    "hot_total_avg_ms": 2099.271,
+    "hot_tt_vision_avg_ms": 488.173,
+    "hot_cpu_decoder_avg_ms": 1610.218
+  },
+  "output_text": "industrie"
+}

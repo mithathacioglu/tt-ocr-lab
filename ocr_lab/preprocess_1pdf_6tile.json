@@ -1,0 +1,19 @@
+{
+  "image_count": 6,
+  "chat_template_ms": 10.624,
+  "vision_info_ms": 102.974,
+  "processor_ms": 209.867,
+  "build_inputs_ms": 323.466,
+  "pixel_values_shape": [
+    20160,
+    588
+  ],
+  "image_grid_thw_shape": [
+    6,
+    3
+  ],
+  "input_ids_shape": [
+    6,
+    859
+  ]
+}

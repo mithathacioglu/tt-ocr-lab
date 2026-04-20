@@ -1,0 +1,76 @@
+1.pdf tek board sabit A4 çözünürlük taraması
+
+Kaynak sayfa:
+- /home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png
+
+Referans eski sıcak yol:
+- 672x952
+- toplam: 31.28 sn
+- TT vision: 16.86 sn
+- decoder: 14.41 sn
+- kaynak: /home/mlops/dll_project/ocr_lab/tmp_1pdf_page_tt_2runs.json
+
+Yeni tarama (aynı prompt, max_new_tokens=64):
+- 672x952 -> toplam 25.27 sn, vision 11.33 sn, decoder 13.93 sn
+- 560x792 -> toplam 17.61 sn, vision 4.86 sn, decoder 12.75 sn
+- 504x714 -> toplam 15.01 sn, vision 3.81 sn, decoder 11.19 sn
+- 490x694 -> toplam 14.64 sn, vision 3.93 sn, decoder 10.71 sn
+- 476x674 -> toplam 14.00 sn, vision 2.94 sn, decoder 11.05 sn
+- 468x662 -> toplam 12.90 sn, vision 3.30 sn, decoder 9.60 sn
+- 462x654 -> toplam 12.06 sn, vision 2.50 sn, decoder 9.56 sn, fakat metin drift etmeye başladı
+- 448x634 -> toplam 12.86 sn, vision 2.42 sn, decoder 10.44 sn, fakat metin bozuldu
+
+Doğruluk notu:
+- 504x714, 490x694, 476x674 ve 468x662 aynı başlangıç metnini doğru korudu:
+  T.C. / BAKIRKÖY / 2. AİLE MAHKEMESİ / Esas No / Karar No / KESİNLEŞME ŞERHİ
+- 462x654 boyutunda drift başladı:
+  fazladan boşluk ve metin sonu kırpılması
+- 448x634 boyutunda bozulma başladı:
+  "işbu" -> "iğbu"
+
+En iyi güvenli nokta:
+- 468x662
+- sıcak toplam: 12.90 sn
+- eski 31.28 sn sıcak yola göre yaklaşık 2.43x daha hızlı
+
+476x674 token taraması:
+- 32 token -> toplam 11.36 sn, vision 3.36 sn, decoder 8.00 sn
+- 48 token -> toplam 12.62 sn, vision 3.39 sn, decoder 9.23 sn
+- 64 token -> toplam 14.53 sn, vision 3.40 sn, decoder 11.13 sn
+- kaynak: /home/mlops/dll_project/ocr_lab/benchmark_single_board_page_variants_1pdf_476_tokens.json
+
+Çıkarım:
+- Bu aşamada en büyük pratik kazanç düşük ama hâlâ okunabilir sabit A4 çözünürlüğe inmekten geliyor.
+- Vision maliyeti ciddi düşüyor.
+- Kalan ana darboğaz hâlâ decoder.
+- Alt sınır taramasında güvenli eşik 468x662 olarak göründü.
+
+TT-metal native vision denemesi:
+- Resmi Qwen2.5-VL TT-metal vision yolunu `dots.mocr` vision tower'ına uyarlayan deneysel bir yol çalıştırıldı.
+- En hızlı warm sonuçta vision süresi yaklaşık 330 ms seviyesine kadar indi.
+- Çıkış şekli merger sonrası beklenen boyutta kaldı: `[408, 1536]`.
+- Buna rağmen OCR metni doğru çıkmadı; embedding tarafında semantik sapma oluştu.
+- CPU referans vision embedding'i ile native TT-metal embedding'i arasındaki cosine similarity yaklaşık 0.109 ölçüldü.
+
+Yorum:
+- Bu yol hız açısından çok güçlü görünüyor.
+- Ama şu an için güvenli veya doğru üretim yolu değil.
+- Muhtemel sorun alanları QKV dönüşümü, RoPE veya rotary varsayımları, pencereleme veya preprocessing varsayımları ve model-özel state-dict beklentileri.
+
+Standalone TTNN vision denemesi:
+- Ayrı bir yolda 42 vision blok için standalone TTNN akışı çalıştırıldı.
+- Bu yolda rotary kullanıldı ve 1.pdf ilk sayfa için metin çıktısı doğru kaldı.
+- Uçtan uca kontrolde `Text match: True` görüldü.
+- Üç sıcak koşuda vision süresi yaklaşık 2.43 sn, 2.09 sn ve 2.14 sn ölçüldü.
+- Aynı deneylerde toplam süre yaklaşık 13.94 sn, 13.49 sn ve 12.82 sn oldu.
+
+Bu yolun anlamı:
+- Önceki yaklaşık 2.9 sn vision sıcak yoluna göre vision tarafında yaklaşık yüzde 25-30 arası kazanç var.
+- Doğruluk korunuyor.
+- Yani şu an elimizde iki ayrı sonuç var:
+  - çok hızlı ama semantik olarak yanlış DropIn TT-metal yolu
+  - daha yavaş ama doğru çalışan standalone TTNN yolu
+
+Pratik sonuç:
+- Kısa vadede güvenli aday standalone TTNN yolu.
+- Orta vadede asıl büyük hedef, standalone yolun doğruluğunu koruyup resmi TT-metal native yolun hızına yaklaşmak.

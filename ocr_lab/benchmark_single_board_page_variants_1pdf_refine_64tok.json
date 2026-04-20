@@ -1,0 +1,40 @@
+{
+  "image": "/home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png",
+  "device_index": "0",
+  "sizes": [
+    {
+      "fixed_page_width": 490,
+      "fixed_page_height": 694,
+      "warmup_total_ms": 24433.155,
+      "warmup_tt_vision_ms": 12921.454,
+      "warmup_cpu_decoder_ms": 11508.676,
+      "runs": [
+        {
+          "max_new_tokens": 64,
+          "total_ms": 14643.638,
+          "tt_vision_ms": 3928.539,
+          "cpu_decoder_ms": 10707.076,
+          "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli",
+          "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli"
+        }
+      ]
+    },
+    {
+      "fixed_page_width": 476,
+      "fixed_page_height": 674,
+      "warmup_total_ms": 25327.296,
+      "warmup_tt_vision_ms": 14649.7,
+      "warmup_cpu_decoder_ms": 10673.805,
+      "runs": [
+        {
+          "max_new_tokens": 64,
+          "total_ms": 13996.636,
+          "tt_vision_ms": 2942.121,
+          "cpu_decoder_ms": 11052.548,
+          "output_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli",
+          "output_text": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli"
+        }
+      ]
+    }
+  ]
+}

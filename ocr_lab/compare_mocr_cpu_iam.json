@@ -1,0 +1,6 @@
+{
+  "model_path": "rednote-hilab/dots.mocr",
+  "image": "/home/mlops/dll_project/tt-mlir/third_party/tt-metal/src/tt-metal/models/sample_data/iam_ocr_image.jpg",
+  "device": "cpu",
+  "output_text": "[{\"bbox\": [1, 1, 155, 109], \"category\": \"Text\", \"text\": \"indust"
+}

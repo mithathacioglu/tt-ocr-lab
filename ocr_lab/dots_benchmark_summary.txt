@@ -1,0 +1,12 @@
+model=rednote-hilab/dots.mocr
+device=cpu
+
+image=iam_ocr_image.jpg
+elapsed_s=23.605
+json_out=/home/mlops/dll_project/ocr_lab/dots_iam_ocr_image.json
+summary=text=industrie
+
+image=ocr_image.jpeg
+elapsed_s=126.155
+json_out=/home/mlops/dll_project/ocr_lab/dots_llama_ocr_image.json
+summary=extracted code/text lines

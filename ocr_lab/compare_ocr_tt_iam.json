@@ -1,0 +1,54 @@
+{
+  "image": "/home/mlops/dll_project/tt-mlir/third_party/tt-metal/src/tt-metal/models/sample_data/iam_ocr_image.jpg",
+  "model_path": "rednote-hilab/dots.ocr",
+  "device_index": "0",
+  "prompt": "Please output the exact text in the image.\n\nReturn plain text only.\n",
+  "repeats": 2,
+  "fixed_page": {
+    "enabled": false,
+    "source_width": null,
+    "source_height": null,
+    "target_width": null,
+    "target_height": null,
+    "scale": null,
+    "resized_width": null,
+    "resized_height": null,
+    "pad_left": null,
+    "pad_top": null
+  },
+  "tt_device": "xla:0",
+  "tt_runtime": {
+    "cache_dir": null,
+    "compile_options": {
+      "optimization_level": "2"
+    },
+    "program_cache_enabled": true,
+    "trace_enabled": false,
+    "trace_region_size": null
+  },
+  "iterations": [
+    {
+      "index": 1,
+      "tt_vision_ms": 2389.095,
+      "cpu_decoder_ms": 1317.482,
+      "total_ms": 3707.786,
+      "output_text": ""
+    },
+    {
+      "index": 2,
+      "tt_vision_ms": 436.998,
+      "cpu_decoder_ms": 1295.419,
+      "total_ms": 1733.35,
+      "output_text": ""
+    }
+  ],
+  "summary": {
+    "first_total_ms": 3707.786,
+    "first_tt_vision_ms": 2389.095,
+    "first_cpu_decoder_ms": 1317.482,
+    "hot_total_avg_ms": 1733.35,
+    "hot_tt_vision_avg_ms": 436.998,
+    "hot_cpu_decoder_avg_ms": 1295.419
+  },
+  "output_text": ""
+}

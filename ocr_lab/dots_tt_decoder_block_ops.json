@@ -1,0 +1,101 @@
+{
+  "input_layernorm": {
+    "ok": true,
+    "ms": 428.733,
+    "shape": [
+      1,
+      46,
+      1536
+    ],
+    "pcc": 0.999996,
+    "max_abs_diff": 0.25
+  },
+  "q_proj": {
+    "ok": true,
+    "ms": 137.217,
+    "shape": [
+      1,
+      46,
+      1536
+    ],
+    "pcc": 0.99999,
+    "max_abs_diff": 0.5
+  },
+  "k_proj": {
+    "ok": true,
+    "ms": 1143.742,
+    "shape": [
+      1,
+      46,
+      256
+    ],
+    "pcc": 0.999998,
+    "max_abs_diff": 2.0
+  },
+  "v_proj": {
+    "ok": true,
+    "ms": 2.075,
+    "shape": [
+      1,
+      46,
+      256
+    ],
+    "pcc": 0.999971,
+    "max_abs_diff": 0.023438
+  },
+  "o_proj": {
+    "ok": true,
+    "ms": 877.031,
+    "shape": [
+      1,
+      46,
+      1536
+    ],
+    "pcc": 0.999993,
+    "max_abs_diff": 0.03125
+  },
+  "post_attention_layernorm": {
+    "ok": true,
+    "ms": 1.884,
+    "shape": [
+      1,
+      46,
+      1536
+    ],
+    "pcc": 0.999996,
+    "max_abs_diff": 0.015625
+  },
+  "gate_proj": {
+    "ok": true,
+    "ms": 2518.445,
+    "shape": [
+      1,
+      46,
+      8960
+    ],
+    "pcc": 0.999996,
+    "max_abs_diff": 0.015625
+  },
+  "up_proj": {
+    "ok": true,
+    "ms": 5.557,
+    "shape": [
+      1,
+      46,
+      8960
+    ],
+    "pcc": 0.999993,
+    "max_abs_diff": 0.015625
+  },
+  "down_proj": {
+    "ok": true,
+    "ms": 2370.672,
+    "shape": [
+      1,
+      46,
+      1536
+    ],
+    "pcc": 0.999894,
+    "max_abs_diff": 0.25
+  }
+}

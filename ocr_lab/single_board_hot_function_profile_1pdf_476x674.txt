@@ -1,0 +1,63 @@
+image: /home/mlops/dll_project/ocr_lab/tmp_1pdf_page-1.png
+warmup_runs: 1
+hot_total_ms: 18249.773
+build_inputs_ms: 36.686
+tt_vision_ms: 7783.229
+inject_ms: 2.361
+cpu_generate_ms: 10422.791
+decode_ms: 0.399
+
+decoder_top_modules:
+- decoder.lm_head: 1158.213 ms (64 call)
+- decoder.layers.5.mlp: 248.146 ms (64 call)
+- decoder.layers.4.mlp: 244.233 ms (64 call)
+- decoder.layers.1.mlp: 241.777 ms (64 call)
+- decoder.layers.26.mlp: 239.499 ms (64 call)
+- decoder.layers.0.mlp: 238.25 ms (64 call)
+- decoder.layers.3.mlp: 235.114 ms (64 call)
+- decoder.layers.27.mlp: 234.885 ms (64 call)
+- decoder.layers.11.mlp: 232.368 ms (64 call)
+- decoder.layers.22.mlp: 232.078 ms (64 call)
+- decoder.layers.25.mlp: 229.789 ms (64 call)
+- decoder.layers.15.mlp: 228.897 ms (64 call)
+- decoder.layers.17.mlp: 228.636 ms (64 call)
+- decoder.layers.7.mlp: 227.454 ms (64 call)
+- decoder.layers.6.mlp: 226.656 ms (64 call)
+- decoder.layers.24.mlp: 225.857 ms (64 call)
+- decoder.layers.2.mlp: 225.211 ms (64 call)
+- decoder.layers.19.mlp: 224.805 ms (64 call)
+- decoder.layers.18.mlp: 222.764 ms (64 call)
+- decoder.layers.23.mlp: 222.745 ms (64 call)
+
+decoder_aggregates:
+- embed_tokens_ms: 2.767 ms
+- rotary_emb_ms: 16.783 ms
+- input_layernorm_ms: 256.703 ms
+- self_attn_total_ms: 2148.184 ms
+- q_proj_ms: 441.297 ms
+- k_proj_ms: 98.806 ms
+- v_proj_ms: 100.913 ms
+- o_proj_ms: 411.024 ms
+- attn_residual_ms: 1096.144 ms
+- post_attention_layernorm_ms: 173.785 ms
+- mlp_total_ms: 6383.164 ms
+- gate_proj_ms: 2050.355 ms
+- up_proj_ms: 2054.238 ms
+- down_proj_ms: 2064.676 ms
+- mlp_residual_ms: 213.895 ms
+- final_norm_ms: 9.441 ms
+- lm_head_ms: 1158.213 ms
+
+vision_top_segments:
+- vision.blocks.gated_tt: 2989.727 ms (42 call)
+- vision.blocks.attn_cpu: 2217.826 ms (42 call)
+- vision.blocks.fc2_tt_residual: 1587.34 ms (42 call)
+- vision.blocks.norm1_cpu: 232.014 ms (42 call)
+- vision.blocks.norm2_cpu: 225.771 ms (42 call)
+- vision.blocks.proj_tt_residual: 189.595 ms (42 call)
+- vision.blocks.fc1_tt: 123.435 ms (42 call)
+- vision.blocks.qkv_tt: 89.463 ms (42 call)
+- vision.merger_cpu: 62.679 ms (1 call)
+- vision.blocks.fc3_tt: 35.297 ms (42 call)
+- vision.patch_embed_tt: 14.172 ms (1 call)
+- vision.post_norm_cpu: 7.537 ms (1 call)

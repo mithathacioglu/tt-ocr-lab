@@ -1,0 +1,30 @@
+{
+  "iterations": [
+    {
+      "index": 1,
+      "tt_hybrid_ms": 18159.579,
+      "tt_next_token_id": 484,
+      "tt_next_text": "ind"
+    },
+    {
+      "index": 2,
+      "tt_hybrid_ms": 2009.734,
+      "tt_next_token_id": 484,
+      "tt_next_text": "ind"
+    },
+    {
+      "index": 3,
+      "tt_hybrid_ms": 2010.936,
+      "tt_next_token_id": 484,
+      "tt_next_text": "ind"
+    }
+  ],
+  "summary": {
+    "first_ms": 18159.579,
+    "hot_avg_ms": 2010.335,
+    "cpu_next_token_id": 484,
+    "cpu_next_text": "ind",
+    "pcc_vs_cpu_last": 0.998147,
+    "max_abs_diff_last": 1.71875
+  }
+}

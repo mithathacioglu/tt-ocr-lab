@@ -1,0 +1,14 @@
+{
+  "resolution": "native",
+  "seq": 2791,
+  "cpu_prefill_ms": 252458.82036001422,
+  "cpu_decode_avg_ms": 120.72757622972654,
+  "tt_decode_avg_ms": 25.78748089799363,
+  "tt_decode_warm_ms": 23.286621411264473,
+  "tt_total_decode_ms": 4564.384118944872,
+  "tt_generated_tokens": 178,
+  "cpu_generated_tokens": 179,
+  "token_match": "66/178",
+  "cpu_text_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli hükümler, Davacı 'e ve davalı 'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018 tarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde kesinleştiği tasdik olunur. 18/01/2018",
+  "tt_text_preview": "T.C.\nBAKIRKÖY\n2. AİLE MAHKEMESİ\n\nEsas No :\n\nKarar No :\n\n- KESİNLEŞME ŞERHİ -\n\nMahkememizden verilen işbu 28/12/2017 tarihli hüküml, Davacı 'e ve davalı 'e 18/01/2018 tarihinde tebliğ olunmuş, tarafların 18/01/2018 tarihinde vermiş olduğu \"İstinaftan Feragat Dilekçesi\" ile hükmün, 18/01/2018 tarihinde kesinleştiği tasdik olunur. 18/01/2018"
+}
