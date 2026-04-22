@@ -1,0 +1,6 @@
+2026-04-22 15:32:32.223 | DEBUG    | ttnn:<module>:77 - Initial ttnn.CONFIG:
+Config{cache_path=/home/aroberge/.cache/ttnn,model_cache_path=/home/aroberge/.cache/ttnn/models,tmp_dir=/tmp/ttnn,enable_model_cache=false,enable_fast_runtime_mode=true,throw_exception_on_fallback=false,enable_logging=false,enable_graph_report=false,enable_detailed_buffer_report=false,enable_detailed_tensor_report=false,enable_comparison_mode=false,comparison_mode_should_raise_exception=false,comparison_mode_pcc=0.9999,root_report_path=generated/ttnn/reports,report_name=std::nullopt,std::nullopt}
+2026-04-22 15:32:34.180 | DEBUG    | ttnn.device:__init__:155 - Using default dispatch core type for this system: DispatchCoreType.ETH
+2026-04-22 15:32:34.181 | DEBUG    | ttnn.device:__init__:157 - Using default dispatch core axis for this system: DispatchCoreAxis.ROW
+[90m2026-04-22 15:32:42.478[0m | critical | [35m         Always[0m | [37mTT_FATAL: Out of Memory: Not enough space to allocate 2147483648 B DRAM buffer across 12 banks, where each bank needs to store 178958336 B, but bank size is 1071821792 B (allocated: 894791680 B, free: 177030112 B, largest free block: 177030112 B)[0m [90m(assert.hpp:104)[0m
+ok=True raised=True missing=[]

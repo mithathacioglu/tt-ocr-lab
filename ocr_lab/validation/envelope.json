@@ -1,0 +1,93 @@
+{
+  "$comment": "Validated shape/precision envelope for dots.mocr on N300 (1x1 mesh).\nValues marked TBD-MEASURED come from Phase 2 hardware sweeps; values marked AUDIT come from source-code analysis (Phase 1).\nUpdate this file by re-running validation/scripts/probe_*.py and copying the resulting thresholds.",
+  "device": "n300",
+  "mesh_shape": [1, 1],
+  "model": "dots.mocr (Qwen2.5-VL 3B + 42-block vision)",
+  "components": {
+    "vision_tower": {
+      "knobs": {
+        "max_seq_len": {
+          "purpose": "Sizes the per-block KV / mask buffers in VisionAttention. NOT a numerics knob.",
+          "validated_ok": [2048, 8192],
+          "loud_failure_above": "OOM if >> available DRAM (Category A1, bank_manager.cpp:434)",
+          "silent_failure": "None (only sizes pre-allocations).",
+          "evidence_script": null,
+          "evidence_audit": "audit/vision_tower_contract.md"
+        },
+        "padded_sl": {
+          "purpose": "Per-image padded sequence length, derived as ((unp//2048)+1)*2048 in DropInVisionTransformer.forward (model.py:231). Caller cannot control directly; it follows from the input image dimensions.",
+          "validated_ok_when_dtype_bf8": [2048, 2048],
+          "silent_failure_above_when_dtype_bf8": 4096,
+          "loud_failure_above": null,
+          "evidence_script": "scripts/probe_vision_sl_sweep.py -> logs/vision_sl_sweep.json",
+          "evidence_audit": "audit/vision_tower_contract.md",
+          "note": "B1 case: unp=2259 -> sl=4096 with N_TT=5 silently corrupts the hidden state. The threshold is a function of (sl, n_tt, weight_dtype). With dtype=bfloat16 throughout the threshold rises sharply (cost: ~30% slower vision)."
+        },
+        "n_tt_blocks": {
+          "purpose": "How many of the 42 vision blocks run on TT (rest on CPU fp32).",
+          "validated_ok_for_keyword_5_of_5": [0, 11],
+          "silent_failure_above": 12,
+          "loud_failure_above": null,
+          "evidence_script": "ocr_lab/run_hybrid_fast.py + scripts/probe_vision_sl_sweep.py",
+          "evidence_audit": "audit/vision_tower_contract.md, project_dots_mocr_5of5_pipeline.md"
+        }
+      }
+    },
+    "decoder": {
+      "knobs": {
+        "max_cache_seq": {
+          "purpose": "Tile-aligned upper bound for the per-layer KV cache (28 layers, n_kv_heads=2, head_dim=128, dtype=bf16).",
+          "validated_ok": [32, 4096],
+          "loud_failure_above": "OOM at allocation time when total KV bytes (28 layers * 2 heads * max_cache * 128 * 2B * 2 (K+V)) plus working set exceeds DRAM (Category A1).",
+          "silent_failure_above": null,
+          "evidence_script": "scripts/repro_A1_oom.py",
+          "evidence_audit": "audit/A1_bank_manager.md"
+        },
+        "kv_dtype": {
+          "purpose": "Storage precision for the K and V tensors of every decoder layer.",
+          "validated_ok": ["bfloat16"],
+          "rejected_with_fatal": ["float32"],
+          "evidence_script": "scripts/probe_decode_kv_dtype.py, scripts/repro_A4_fp32_kv.py",
+          "evidence_audit": "audit/A4_fp32_kv.md, audit/sdpa_decode_contract.md",
+          "note": "GQA path additionally rejects bfloat8_b/bfloat4_b for Q (sdpa_decode_device_operation.cpp:312)."
+        },
+        "prefill_seq_for_argmax_stability": {
+          "purpose": "Maximum prompt length (post-vision-prefill) for which TT decoder argmax remains stable vs HF fp32 over MAX_NEW=180 steps.",
+          "validated_ok_below": 2000,
+          "silent_failure_above": 2791,
+          "evidence_script": "scripts/probe_decode_seq_sweep.py, ocr_lab/probe_tt_decode_divergence.py",
+          "evidence_audit": null,
+          "note": "Below ~2000 the bf16 KV cumulative drift stays below the argmax-flipping threshold even with HiFi4/fp32_dest_acc. Between 2000-2791 occasional flips appear. At 2791 NewMind sees first divergence at decode step 39."
+        },
+        "k_chunk_size_for_sdpa": {
+          "purpose": "K-dimension chunk size used by the prefill SDPA program config.",
+          "validated_ok_multiples_of": 32,
+          "loud_failure_for": "any value not a multiple of 32 (sdpa_device_operation.cpp:152-156, sdpa_decode_device_operation.cpp:228)",
+          "evidence_script": "scripts/repro_A3_chunk16.py",
+          "evidence_audit": "audit/A3_chunk16.md"
+        }
+      }
+    },
+    "sdpa_decode_op": {
+      "knobs": {
+        "q_layout": {
+          "expected": "[1, B, n_q_heads, head_dim]",
+          "newmind_actual": "[1, 1, 12, 128] (B=1, n_q_heads=12)",
+          "passes_validators": true,
+          "produces_correct_output": "TBD-MEASURED",
+          "evidence_script": "scripts/probe_sdpa_decode_contract.py",
+          "evidence_audit": "audit/sdpa_decode_contract.md"
+        },
+        "kv_layout": {
+          "expected": "[1, B, S, head_dim] (or [1,1,S,d] when share_cache=True)",
+          "newmind_actual": "[1, 2, max_cache, 128] (n_kv_heads=2 in dim 1, NOT B)",
+          "passes_validators": true,
+          "produces_correct_output": "TBD-MEASURED",
+          "evidence_script": "scripts/probe_sdpa_decode_contract.py",
+          "evidence_audit": "audit/sdpa_decode_contract.md",
+          "note": "The shape passes the rank-4 + dim-equality validators because k_shape[0]=1=B; the kernel may misinterpret dim 1 as the batch axis instead of the GQA-head axis."
+        }
+      }
+    }
+  }
+}

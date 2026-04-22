@@ -1,0 +1,39 @@
+{
+  "layouts": {
+    "A_newmind_layout": {
+      "q_shape": [
+        1,
+        1,
+        12,
+        128
+      ],
+      "k_shape": [
+        1,
+        2,
+        2976,
+        128
+      ],
+      "v_shape": [
+        1,
+        2,
+        2976,
+        128
+      ],
+      "cur_pos": 2790,
+      "elapsed_ms": 13.105474994517863,
+      "ran": true,
+      "cosine_vs_cpu_fp32": 0.999691903591156,
+      "max_abs_diff": 0.0027217604219913483,
+      "matches_reference": true
+    },
+    "C_prefill_sdpa_ground_truth": {
+      "elapsed_ms": 10.920919012278318,
+      "ran": true,
+      "cosine_vs_cpu_fp32": 0.999653160572052,
+      "matches_reference": true
+    }
+  },
+  "expected_decode_q_layout": "[1, B, n_q_heads, head_dim] with B = decode batch users",
+  "expected_decode_kv_layout": "[1, B, S, head_dim] (or share_cache K/V batch=1)",
+  "audit_note": "Q [1,1,12,128] passes the contract because q_shape[0]==1, q_shape[1]==B==1 and the GQA validator at line 316 checks q_shape_unpadded[2] % k_shape[1] == 0 (12 % 2 == 0). However, the kernel reads K/V starting at cur_pos under the assumption that KV's seq dim is dim 2 -- which it is, by coincidence with the prefill-style cache layout used here -- but the GQA head replication may interact with cur_pos in a way that misaligns reads when n_q_heads/n_kv_heads is large. The cosine_vs_cpu_fp32 measured here is the empirical answer."
+}

@@ -1,0 +1,6 @@
+2026-04-22 15:32:45.858 | DEBUG    | ttnn:<module>:77 - Initial ttnn.CONFIG:
+Config{cache_path=/home/aroberge/.cache/ttnn,model_cache_path=/home/aroberge/.cache/ttnn/models,tmp_dir=/tmp/ttnn,enable_model_cache=false,enable_fast_runtime_mode=true,throw_exception_on_fallback=false,enable_logging=false,enable_graph_report=false,enable_detailed_buffer_report=false,enable_detailed_tensor_report=false,enable_comparison_mode=false,comparison_mode_should_raise_exception=false,comparison_mode_pcc=0.9999,root_report_path=generated/ttnn/reports,report_name=std::nullopt,std::nullopt}
+2026-04-22 15:32:46.150 | DEBUG    | ttnn.device:__init__:155 - Using default dispatch core type for this system: DispatchCoreType.ETH
+2026-04-22 15:32:46.150 | DEBUG    | ttnn.device:__init__:157 - Using default dispatch core axis for this system: DispatchCoreAxis.ROW
+[90m2026-04-22 15:32:46.682[0m | critical | [35m         Always[0m | [37mTT_FATAL: Mask sequence length must match Q sequence length[0m [90m(assert.hpp:104)[0m
+ok=True raised=True missing=[]

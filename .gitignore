@@ -1,0 +1,28 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual envs
+.venv*/
+venv/
+env/
+
+# tt-metal runtime artifacts (auto-created on every run)
+generated/
+.cache/
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*~
+
+# Local-only test outputs / scratch logs
+*.log.local
+tmp_*

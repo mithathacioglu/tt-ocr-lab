@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/aroberge/tt-ocr-lab/ocr_lab/validation/scripts/probe_decode_kv_dtype.py", line 21, in <module>
+    from _decode_probe_core import ProbeConfig, run_probe, close_mesh  # noqa: E402
+  File "/home/aroberge/tt-ocr-lab/ocr_lab/validation/scripts/_decode_probe_core.py", line 32, in <module>
+    from ocr_lab.dots_mocr_tt_metal_adapter import patch_dots_mocr_config_for_tt_metal  # noqa: E402
+  File "/home/aroberge/tt-ocr-lab/ocr_lab/dots_mocr_tt_metal_adapter.py", line 8, in <module>
+    from dots_tt_port.vision_tower_smoke import resolve_snapshot_dir
+ModuleNotFoundError: No module named 'dots_tt_port'
